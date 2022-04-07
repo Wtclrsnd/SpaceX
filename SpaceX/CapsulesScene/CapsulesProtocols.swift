@@ -6,6 +6,8 @@
 //  Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
+import Foundation
+
 protocol CapsulesDataPassing {
     var dataStore: CapsulesDataStore { get }
 }
@@ -13,10 +15,12 @@ protocol CapsulesDataPassing {
 protocol CapsulesDataStore {}
 
 protocol CapsulesBusinessLogic {
-    func requestInitForm(_ request: Capsules.InitForm.Request)
+    func getCapsulesData(_ request: Capsules.InitForm.Request)
 }
 
-protocol CapsulesWorkerLogic {}
+protocol CapsulesWorkerLogic {
+	func getData(request: URLRequest, completion: @escaping ([Capsule]) -> Void)
+}
 
 protocol CapsulesPresentationLogic {
     func presentInitForm(_ response: Capsules.InitForm.Response)

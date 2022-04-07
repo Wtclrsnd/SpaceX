@@ -26,4 +26,8 @@ protocol MenuDisplayLogic: AnyObject {
     func displayInitForm(_ viewModel: Menu.InitForm.ViewModel)
 }
 
-protocol MenuRoutingLogic {}
+protocol MenuRoutingLogic {
+	func switchToHistory()
+	func switchToMissions()
+	func switchToCapsules()
+}

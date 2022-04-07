@@ -9,6 +9,15 @@
 import UIKit
 
 final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
+	private lazy var tableView: UITableView = {
+		let tableView = UITableView()
+		tableView.isScrollEnabled = false
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		return tableView
+	}()
+
+	private var capsules: [Capsules.CapsuleData] = []
+
     private let interactor: CapsulesBusinessLogic
     private let router: CapsulesRoutingLogic
 
@@ -26,8 +35,19 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+		setUpUI()
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.reloadData()
     }
 
+	private func setUpUI() {
+		view.backgroundColor = .systemBackground
+		title = "SpaceX Capsules"
+
+		view.addSubview(tableView)
+		tableView.frame = view.bounds
+	}
     // MARK: - CapsulesDisplayLogic
 
     func displayInitForm(_ viewModel: Capsules.InitForm.ViewModel) {}
@@ -35,6 +55,18 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
     // MARK: - Private
 
     private func initForm() {
-        interactor.requestInitForm(Capsules.InitForm.Request())
+        interactor.getCapsulesData(Capsules.InitForm.Request())
     }
+}
+
+extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return capsules.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		cell.textLabel?.text = capsules[indexPath.row].capsuleID.rawValue
+		return cell
+	}
 }

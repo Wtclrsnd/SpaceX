@@ -71,4 +71,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.textLabel?.text = menuRows[indexPath.row]
 		return cell
 	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		switch indexPath.row {
+		case 0:
+			router.switchToHistory()
+		case 1:
+			router.switchToMissions()
+		case 2:
+			router.switchToCapsules()
+		default:
+			()
+		}
+	}
 }

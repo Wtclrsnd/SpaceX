@@ -14,7 +14,7 @@ enum Capsules {
 	}
 
 	// MARK: - Capsule
-	struct Capsule: Codable {
+	struct CapsuleData: Codable {
 		let capsuleSerial: String
 		let capsuleID: CapsuleID
 		let status: Status

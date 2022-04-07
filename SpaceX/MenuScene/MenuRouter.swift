@@ -15,12 +15,22 @@ final class MenuRouter: MenuRoutingLogic, MenuDataPassing {
     init(dataStore: MenuDataStore) {
         self.dataStore = dataStore
     }
+
+	func switchToHistory() {
+		let historyVC = HistoryAssembly.build()
+		viewController?.navigationController?.pushViewController(historyVC, animated: true)
+	}
+
+	func switchToMissions() {
+		let missionsVC = MissionsAssembly.build()
+		viewController?.navigationController?.pushViewController(missionsVC, animated: true)
+	}
+
+	func switchToCapsules() {
+		let capsulesVC = CapsulesAssembly.build()
+		viewController?.navigationController?.pushViewController(capsulesVC, animated: true)
+	}
 }
 
 private extension MenuRouter {
-//    func passDataTo_() {
-//        source: MenuDataStore,
-//        destination: inout SomewhereDataStore
-//    ) {
-//    }
 }

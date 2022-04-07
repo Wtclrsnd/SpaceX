@@ -6,4 +6,33 @@
 //  Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-final class CapsulesWorker: CapsulesWorkerLogic {}
+import Foundation
+
+final class CapsulesWorker: CapsulesWorkerLogic {
+	func getData(request: URLRequest, completion: @escaping ([Capsule]) -> Void) {
+		URLSession.shared.dataTask(with: request) { data, _, error in
+			guard error == nil else {
+				print(String(describing: error?.localizedDescription))
+				return
+			}
+			guard let data = data else {
+				return
+			}
+
+			print(data)
+
+			let jsonDecoder = JSONDecoder()
+
+			do {
+				let responseObject = try jsonDecoder.decode(
+					[Capsules.CapsuleData].self,
+					from: data
+				)
+				print(responseObject)
+			} catch let error {
+				print(String(describing: error.localizedDescription))
+			}
+		}
+		.resume()
+	}
+}

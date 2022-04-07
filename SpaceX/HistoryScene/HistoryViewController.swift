@@ -26,6 +26,8 @@ final class HistoryViewController: UIViewController, HistoryDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+		view.backgroundColor = .systemBackground
+		title = "SpaceX History"
     }
 
     // MARK: - HistoryDisplayLogic

@@ -20,7 +20,13 @@ final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
         self.worker = worker
     }
 
-    func requestInitForm(_ request: Capsules.InitForm.Request) {
+    func getCapsulesData(_ request: Capsules.InitForm.Request) {
+		let urlString = "https://api.spacexdata.com/v3/capsules"
+		guard let url = URL(string: urlString) else { return }
+		let request = URLRequest(url: url)
+		worker.getData(request: request, completion: { capsules in
+
+		})
         DispatchQueue.main.async {
             self.presenter.presentInitForm(Capsules.InitForm.Response())
         }

@@ -26,6 +26,8 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+		view.backgroundColor = .systemBackground
+		title = "SpaceX Missions"
     }
 
     // MARK: - MissionsDisplayLogic
