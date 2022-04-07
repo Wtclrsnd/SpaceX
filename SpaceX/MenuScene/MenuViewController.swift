@@ -9,6 +9,15 @@
 import UIKit
 
 final class MenuViewController: UIViewController, MenuDisplayLogic {
+	private lazy var tableView: UITableView = {
+		let tableView = UITableView()
+		tableView.isScrollEnabled = false
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		return tableView
+	}()
+
+	private let menuRows = ["History", "Missions", "Capsules"]
+
     private let interactor: MenuBusinessLogic
     private let router: MenuRoutingLogic
 
@@ -26,7 +35,20 @@ final class MenuViewController: UIViewController, MenuDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+		setUpUI()
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.reloadData()
     }
+
+	func setUpUI() {
+		navigationController?.navigationBar.prefersLargeTitles = true
+		title = "SpaceX"
+		navigationController?.navigationBar.tintColor = .systemPink
+
+		view.addSubview(tableView)
+		tableView.frame = view.bounds
+	}
 
     // MARK: - MenuDisplayLogic
 
@@ -37,4 +59,16 @@ final class MenuViewController: UIViewController, MenuDisplayLogic {
     private func initForm() {
         interactor.requestInitForm(Menu.InitForm.Request())
     }
+}
+
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return menuRows.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		cell.textLabel?.text = menuRows[indexPath.row]
+		return cell
+	}
 }

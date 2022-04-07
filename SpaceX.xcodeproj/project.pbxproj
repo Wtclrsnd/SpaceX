@@ -44,6 +44,30 @@
 		728299D027FDCB5E00223FDA /* MenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299C827FDCB5E00223FDA /* MenuProtocols.swift */; };
 		728299D127FDCB5E00223FDA /* MenuAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299C927FDCB5E00223FDA /* MenuAssembly.swift */; };
 		728299D227FDCB5E00223FDA /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299CA27FDCB5E00223FDA /* MenuInteractor.swift */; };
+		728299DC27FDCD5A00223FDA /* MissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299D427FDCD5A00223FDA /* MissionPresenter.swift */; };
+		728299DD27FDCD5A00223FDA /* MissionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299D527FDCD5A00223FDA /* MissionWorker.swift */; };
+		728299DE27FDCD5A00223FDA /* MissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299D627FDCD5A00223FDA /* MissionRouter.swift */; };
+		728299DF27FDCD5A00223FDA /* MissionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299D727FDCD5A00223FDA /* MissionModels.swift */; };
+		728299E027FDCD5A00223FDA /* MissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299D827FDCD5A00223FDA /* MissionViewController.swift */; };
+		728299E127FDCD5A00223FDA /* MissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299D927FDCD5A00223FDA /* MissionProtocols.swift */; };
+		728299E227FDCD5A00223FDA /* MissionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299DA27FDCD5A00223FDA /* MissionAssembly.swift */; };
+		728299E327FDCD5A00223FDA /* MissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299DB27FDCD5A00223FDA /* MissionInteractor.swift */; };
+		728299ED27FDCD9500223FDA /* CapsulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E527FDCD9500223FDA /* CapsulePresenter.swift */; };
+		728299EE27FDCD9500223FDA /* CapsuleWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E627FDCD9500223FDA /* CapsuleWorker.swift */; };
+		728299EF27FDCD9500223FDA /* CapsuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E727FDCD9500223FDA /* CapsuleRouter.swift */; };
+		728299F027FDCD9500223FDA /* CapsuleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E827FDCD9500223FDA /* CapsuleModels.swift */; };
+		728299F127FDCD9500223FDA /* CapsuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E927FDCD9500223FDA /* CapsuleViewController.swift */; };
+		728299F227FDCD9500223FDA /* CapsuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299EA27FDCD9500223FDA /* CapsuleProtocols.swift */; };
+		728299F327FDCD9500223FDA /* CapsuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299EB27FDCD9500223FDA /* CapsuleAssembly.swift */; };
+		728299F427FDCD9500223FDA /* CapsuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299EC27FDCD9500223FDA /* CapsuleInteractor.swift */; };
+		728299FE27FDCDE500223FDA /* EventPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299F627FDCDE500223FDA /* EventPresenter.swift */; };
+		728299FF27FDCDE500223FDA /* EventWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299F727FDCDE500223FDA /* EventWorker.swift */; };
+		72829A0027FDCDE500223FDA /* EventRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299F827FDCDE500223FDA /* EventRouter.swift */; };
+		72829A0127FDCDE500223FDA /* EventModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299F927FDCDE500223FDA /* EventModels.swift */; };
+		72829A0227FDCDE500223FDA /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FA27FDCDE500223FDA /* EventViewController.swift */; };
+		72829A0327FDCDE500223FDA /* EventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FB27FDCDE500223FDA /* EventProtocols.swift */; };
+		72829A0427FDCDE500223FDA /* EventAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FC27FDCDE500223FDA /* EventAssembly.swift */; };
+		72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FD27FDCDE500223FDA /* EventInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +110,30 @@
 		728299C827FDCB5E00223FDA /* MenuProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProtocols.swift; sourceTree = "<group>"; };
 		728299C927FDCB5E00223FDA /* MenuAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAssembly.swift; sourceTree = "<group>"; };
 		728299CA27FDCB5E00223FDA /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		728299D427FDCD5A00223FDA /* MissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionPresenter.swift; sourceTree = "<group>"; };
+		728299D527FDCD5A00223FDA /* MissionWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionWorker.swift; sourceTree = "<group>"; };
+		728299D627FDCD5A00223FDA /* MissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRouter.swift; sourceTree = "<group>"; };
+		728299D727FDCD5A00223FDA /* MissionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModels.swift; sourceTree = "<group>"; };
+		728299D827FDCD5A00223FDA /* MissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionViewController.swift; sourceTree = "<group>"; };
+		728299D927FDCD5A00223FDA /* MissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionProtocols.swift; sourceTree = "<group>"; };
+		728299DA27FDCD5A00223FDA /* MissionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAssembly.swift; sourceTree = "<group>"; };
+		728299DB27FDCD5A00223FDA /* MissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractor.swift; sourceTree = "<group>"; };
+		728299E527FDCD9500223FDA /* CapsulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulePresenter.swift; sourceTree = "<group>"; };
+		728299E627FDCD9500223FDA /* CapsuleWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleWorker.swift; sourceTree = "<group>"; };
+		728299E727FDCD9500223FDA /* CapsuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleRouter.swift; sourceTree = "<group>"; };
+		728299E827FDCD9500223FDA /* CapsuleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleModels.swift; sourceTree = "<group>"; };
+		728299E927FDCD9500223FDA /* CapsuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleViewController.swift; sourceTree = "<group>"; };
+		728299EA27FDCD9500223FDA /* CapsuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleProtocols.swift; sourceTree = "<group>"; };
+		728299EB27FDCD9500223FDA /* CapsuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleAssembly.swift; sourceTree = "<group>"; };
+		728299EC27FDCD9500223FDA /* CapsuleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleInteractor.swift; sourceTree = "<group>"; };
+		728299F627FDCDE500223FDA /* EventPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPresenter.swift; sourceTree = "<group>"; };
+		728299F727FDCDE500223FDA /* EventWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventWorker.swift; sourceTree = "<group>"; };
+		728299F827FDCDE500223FDA /* EventRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRouter.swift; sourceTree = "<group>"; };
+		728299F927FDCDE500223FDA /* EventModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModels.swift; sourceTree = "<group>"; };
+		728299FA27FDCDE500223FDA /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		728299FB27FDCDE500223FDA /* EventProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProtocols.swift; sourceTree = "<group>"; };
+		728299FC27FDCDE500223FDA /* EventAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssembly.swift; sourceTree = "<group>"; };
+		728299FD27FDCDE500223FDA /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,10 +166,10 @@
 		7282997827FDBFD600223FDA /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				7282998E27FDC62500223FDA /* MenuScene */,
 				7282999127FDCA6200223FDA /* HistoryScene */,
 				7282999027FDC63C00223FDA /* MissionsScene */,
 				7282998F27FDC63000223FDA /* CapsulesScene */,
-				7282998E27FDC62500223FDA /* MenuScene */,
 				7282998D27FDC60900223FDA /* common */,
 				7282998727FDBFD900223FDA /* Info.plist */,
 			);
@@ -158,6 +206,7 @@
 		7282998F27FDC63000223FDA /* CapsulesScene */ = {
 			isa = PBXGroup;
 			children = (
+				728299E427FDCD7600223FDA /* DetailCapsuleScene */,
 				728299B327FDCB2E00223FDA /* CapsulesPresenter.swift */,
 				728299B427FDCB2E00223FDA /* CapsulesWorker.swift */,
 				728299B527FDCB2E00223FDA /* CapsulesRouter.swift */,
@@ -173,6 +222,7 @@
 		7282999027FDC63C00223FDA /* MissionsScene */ = {
 			isa = PBXGroup;
 			children = (
+				728299D327FDCD3800223FDA /* DetailMissionScene */,
 				728299A327FDCB0300223FDA /* MissionsPresenter.swift */,
 				728299A427FDCB0300223FDA /* MissionsWorker.swift */,
 				728299A527FDCB0300223FDA /* MissionsRouter.swift */,
@@ -188,6 +238,7 @@
 		7282999127FDCA6200223FDA /* HistoryScene */ = {
 			isa = PBXGroup;
 			children = (
+				728299F527FDCDCF00223FDA /* EventScene */,
 				7282999227FDCA7C00223FDA /* HistoryPresenter.swift */,
 				7282999327FDCA7C00223FDA /* HistoryWorker.swift */,
 				7282999427FDCA7C00223FDA /* HistoryRouter.swift */,
@@ -200,6 +251,51 @@
 			path = HistoryScene;
 			sourceTree = "<group>";
 		};
+		728299D327FDCD3800223FDA /* DetailMissionScene */ = {
+			isa = PBXGroup;
+			children = (
+				728299D427FDCD5A00223FDA /* MissionPresenter.swift */,
+				728299D527FDCD5A00223FDA /* MissionWorker.swift */,
+				728299D627FDCD5A00223FDA /* MissionRouter.swift */,
+				728299D727FDCD5A00223FDA /* MissionModels.swift */,
+				728299D827FDCD5A00223FDA /* MissionViewController.swift */,
+				728299D927FDCD5A00223FDA /* MissionProtocols.swift */,
+				728299DA27FDCD5A00223FDA /* MissionAssembly.swift */,
+				728299DB27FDCD5A00223FDA /* MissionInteractor.swift */,
+			);
+			path = DetailMissionScene;
+			sourceTree = "<group>";
+		};
+		728299E427FDCD7600223FDA /* DetailCapsuleScene */ = {
+			isa = PBXGroup;
+			children = (
+				728299E527FDCD9500223FDA /* CapsulePresenter.swift */,
+				728299E627FDCD9500223FDA /* CapsuleWorker.swift */,
+				728299E727FDCD9500223FDA /* CapsuleRouter.swift */,
+				728299E827FDCD9500223FDA /* CapsuleModels.swift */,
+				728299E927FDCD9500223FDA /* CapsuleViewController.swift */,
+				728299EA27FDCD9500223FDA /* CapsuleProtocols.swift */,
+				728299EB27FDCD9500223FDA /* CapsuleAssembly.swift */,
+				728299EC27FDCD9500223FDA /* CapsuleInteractor.swift */,
+			);
+			path = DetailCapsuleScene;
+			sourceTree = "<group>";
+		};
+		728299F527FDCDCF00223FDA /* EventScene */ = {
+			isa = PBXGroup;
+			children = (
+				728299F627FDCDE500223FDA /* EventPresenter.swift */,
+				728299F727FDCDE500223FDA /* EventWorker.swift */,
+				728299F827FDCDE500223FDA /* EventRouter.swift */,
+				728299F927FDCDE500223FDA /* EventModels.swift */,
+				728299FA27FDCDE500223FDA /* EventViewController.swift */,
+				728299FB27FDCDE500223FDA /* EventProtocols.swift */,
+				728299FC27FDCDE500223FDA /* EventAssembly.swift */,
+				728299FD27FDCDE500223FDA /* EventInteractor.swift */,
+			);
+			path = EventScene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,6 +306,7 @@
 				7282997227FDBFD600223FDA /* Sources */,
 				7282997327FDBFD600223FDA /* Frameworks */,
 				7282997427FDBFD600223FDA /* Resources */,
+				72829A0627FDD5F400223FDA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,6 +363,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72829A0627FDD5F400223FDA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7282997227FDBFD600223FDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -273,12 +390,17 @@
 			files = (
 				728299AF27FDCB0300223FDA /* MissionsViewController.swift in Sources */,
 				728299BE27FDCB2E00223FDA /* CapsulesModels.swift in Sources */,
+				728299FE27FDCDE500223FDA /* EventPresenter.swift in Sources */,
 				728299BC27FDCB2E00223FDA /* CapsulesWorker.swift in Sources */,
+				728299F227FDCD9500223FDA /* CapsuleProtocols.swift in Sources */,
 				728299B127FDCB0300223FDA /* MissionsAssembly.swift in Sources */,
 				7282999F27FDCA7D00223FDA /* HistoryProtocols.swift in Sources */,
 				7282999D27FDCA7D00223FDA /* HistoryModels.swift in Sources */,
 				728299AC27FDCB0300223FDA /* MissionsWorker.swift in Sources */,
+				728299DE27FDCD5A00223FDA /* MissionRouter.swift in Sources */,
 				728299CF27FDCB5E00223FDA /* MenuViewController.swift in Sources */,
+				728299E327FDCD5A00223FDA /* MissionInteractor.swift in Sources */,
+				728299EF27FDCD9500223FDA /* CapsuleRouter.swift in Sources */,
 				728299D027FDCB5E00223FDA /* MenuProtocols.swift in Sources */,
 				728299A027FDCA7D00223FDA /* HistoryAssembly.swift in Sources */,
 				7282997A27FDBFD600223FDA /* AppDelegate.swift in Sources */,
@@ -291,20 +413,39 @@
 				728299BD27FDCB2E00223FDA /* CapsulesRouter.swift in Sources */,
 				728299C027FDCB2E00223FDA /* CapsulesProtocols.swift in Sources */,
 				7282997C27FDBFD600223FDA /* SceneDelegate.swift in Sources */,
+				728299F127FDCD9500223FDA /* CapsuleViewController.swift in Sources */,
+				728299ED27FDCD9500223FDA /* CapsulePresenter.swift in Sources */,
 				728299CB27FDCB5E00223FDA /* MenuPresenter.swift in Sources */,
+				728299FF27FDCDE500223FDA /* EventWorker.swift in Sources */,
+				728299DF27FDCD5A00223FDA /* MissionModels.swift in Sources */,
+				72829A0327FDCDE500223FDA /* EventProtocols.swift in Sources */,
+				728299EE27FDCD9500223FDA /* CapsuleWorker.swift in Sources */,
 				728299A127FDCA7D00223FDA /* HistoryInteractor.swift in Sources */,
+				728299DD27FDCD5A00223FDA /* MissionWorker.swift in Sources */,
+				728299F327FDCD9500223FDA /* CapsuleAssembly.swift in Sources */,
+				728299F027FDCD9500223FDA /* CapsuleModels.swift in Sources */,
 				728299CE27FDCB5E00223FDA /* MenuModels.swift in Sources */,
 				728299B027FDCB0300223FDA /* MissionsProtocols.swift in Sources */,
+				72829A0427FDCDE500223FDA /* EventAssembly.swift in Sources */,
 				728299BF27FDCB2E00223FDA /* CapsulesViewController.swift in Sources */,
 				728299CD27FDCB5E00223FDA /* MenuRouter.swift in Sources */,
 				728299C227FDCB2E00223FDA /* CapsulesInteractor.swift in Sources */,
 				728299D227FDCB5E00223FDA /* MenuInteractor.swift in Sources */,
 				7282999E27FDCA7D00223FDA /* HistoryViewController.swift in Sources */,
+				728299E127FDCD5A00223FDA /* MissionProtocols.swift in Sources */,
 				728299B227FDCB0300223FDA /* MissionsInteractor.swift in Sources */,
+				72829A0127FDCDE500223FDA /* EventModels.swift in Sources */,
+				72829A0227FDCDE500223FDA /* EventViewController.swift in Sources */,
 				728299C127FDCB2E00223FDA /* CapsulesAssembly.swift in Sources */,
+				728299DC27FDCD5A00223FDA /* MissionPresenter.swift in Sources */,
 				728299D127FDCB5E00223FDA /* MenuAssembly.swift in Sources */,
+				728299E027FDCD5A00223FDA /* MissionViewController.swift in Sources */,
 				7282999C27FDCA7D00223FDA /* HistoryRouter.swift in Sources */,
 				728299AB27FDCB0300223FDA /* MissionsPresenter.swift in Sources */,
+				72829A0027FDCDE500223FDA /* EventRouter.swift in Sources */,
+				72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */,
+				728299F427FDCD9500223FDA /* CapsuleInteractor.swift in Sources */,
+				728299E227FDCD5A00223FDA /* MissionAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
