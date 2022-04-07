@@ -19,15 +19,15 @@ protocol CapsulesBusinessLogic {
 }
 
 protocol CapsulesWorkerLogic {
-	func getData(request: URLRequest, completion: @escaping ([Capsule]) -> Void)
+	func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void)
 }
 
 protocol CapsulesPresentationLogic {
-    func presentInitForm(_ response: Capsules.InitForm.Response)
+    func presentInitForm(_ response: [Capsules.InitForm.Response])
 }
 
 protocol CapsulesDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Capsules.InitForm.ViewModel)
+	func displayInitForm(_ viewModel: [Capsules.InitForm.Response])
 }
 
 protocol CapsulesRoutingLogic {}

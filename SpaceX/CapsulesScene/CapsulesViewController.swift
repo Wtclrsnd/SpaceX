@@ -11,12 +11,11 @@ import UIKit
 final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
 	private lazy var tableView: UITableView = {
 		let tableView = UITableView()
-		tableView.isScrollEnabled = false
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		return tableView
 	}()
 
-	private var capsules: [Capsules.CapsuleData] = []
+	private var capsules: [Capsules.InitForm.Response] = []
 
     private let interactor: CapsulesBusinessLogic
     private let router: CapsulesRoutingLogic
@@ -38,7 +37,6 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
 		setUpUI()
 		tableView.delegate = self
 		tableView.dataSource = self
-		tableView.reloadData()
     }
 
 	private func setUpUI() {
@@ -50,7 +48,10 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
 	}
     // MARK: - CapsulesDisplayLogic
 
-    func displayInitForm(_ viewModel: Capsules.InitForm.ViewModel) {}
+	func displayInitForm(_ viewModel: [Capsules.InitForm.Response]) {
+		capsules = viewModel
+		tableView.reloadData()
+	}
 
     // MARK: - Private
 
@@ -66,7 +67,11 @@ extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = capsules[indexPath.row].capsuleID.rawValue
+		cell.textLabel?.text = capsules[indexPath.row].capsuleSerial
 		return cell
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
 	}
 }

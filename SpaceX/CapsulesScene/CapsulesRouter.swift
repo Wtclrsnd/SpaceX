@@ -12,6 +12,11 @@ final class CapsulesRouter: CapsulesRoutingLogic, CapsulesDataPassing {
     weak var viewController: UIViewController?
     let dataStore: CapsulesDataStore
 
+	func moveToCapsule() {
+		let detailVC = CapsuleAssembly.build()
+		viewController?.navigationController?.pushViewController(detailVC, animated: true)
+	}
+
     init(dataStore: CapsulesDataStore) {
         self.dataStore = dataStore
     }

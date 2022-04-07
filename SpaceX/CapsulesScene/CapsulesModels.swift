@@ -9,7 +9,16 @@
 enum Capsules {
 	enum InitForm {
 		struct Request {}
-		struct Response {}
+		struct Response {
+			let capsuleSerial: String
+			let capsuleID: CapsuleID
+			let status: Status
+			let originalLaunch: String?
+			let originalLaunchUnix: Int?
+			let landings: Int
+			let details: String?
+			let reuseCount: Int
+		}
 		struct ViewModel {}
 	}
 

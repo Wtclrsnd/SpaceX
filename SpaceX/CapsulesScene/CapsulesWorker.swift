@@ -9,7 +9,7 @@
 import Foundation
 
 final class CapsulesWorker: CapsulesWorkerLogic {
-	func getData(request: URLRequest, completion: @escaping ([Capsule]) -> Void) {
+	func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void) {
 		URLSession.shared.dataTask(with: request) { data, _, error in
 			guard error == nil else {
 				print(String(describing: error?.localizedDescription))
@@ -19,7 +19,7 @@ final class CapsulesWorker: CapsulesWorkerLogic {
 				return
 			}
 
-			print(data)
+//			print(data)
 
 			let jsonDecoder = JSONDecoder()
 
@@ -28,7 +28,8 @@ final class CapsulesWorker: CapsulesWorkerLogic {
 					[Capsules.CapsuleData].self,
 					from: data
 				)
-				print(responseObject)
+//				print(responseObject)
+				completion(responseObject)
 			} catch let error {
 				print(String(describing: error.localizedDescription))
 			}
