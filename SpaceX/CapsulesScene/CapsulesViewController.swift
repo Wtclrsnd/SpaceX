@@ -50,7 +50,9 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
 
 	func displayInitForm(_ viewModel: [Capsules.InitForm.Response]) {
 		capsules = viewModel
-		tableView.reloadData()
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
 	}
 
     // MARK: - Private
@@ -72,6 +74,6 @@ extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
+		router.moveToCapsule(serial: capsules[indexPath.row].capsuleSerial)
 	}
 }

@@ -9,8 +9,6 @@
 import UIKit
 
 final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
-
-	//MARK: - Properties
 	private lazy var scrollView = UIScrollView()
 
 	private lazy var stack: UIStackView = {
@@ -22,22 +20,22 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		return stack
 	}()
 
-	private lazy var serialLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "serial"
-		label.font = .systemFont(ofSize: 28)
-		return label
+	private lazy var capsuleIDTextField: UITextField = {
+		let textField = UITextField()
+		textField.translatesAutoresizingMaskIntoConstraints = false
+		textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+		textField.text = "Capsule ID: "
+		textField.font = .systemFont(ofSize: 28)
+		return textField
 	}()
 
-	private lazy var capsuleIDLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "capsuleID"
-		label.font = .systemFont(ofSize: 28)
-		return label
+	private lazy var statusTextField: UITextField = {
+		let textField = UITextField()
+		textField.translatesAutoresizingMaskIntoConstraints = false
+		textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
+		textField.text = "Status: "
+		textField.font = .systemFont(ofSize: 28)
+		return textField
 	}()
 
 	private lazy var statusLabel: UILabel = {
@@ -96,7 +94,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
     }
 
 	private func setUpUI() {
-		
+		view.backgroundColor = .systemBackground
 	}
 
     // MARK: - CapsuleDisplayLogic

@@ -12,8 +12,9 @@ final class CapsulesRouter: CapsulesRoutingLogic, CapsulesDataPassing {
     weak var viewController: UIViewController?
     let dataStore: CapsulesDataStore
 
-	func moveToCapsule() {
+	func moveToCapsule(serial: String) {
 		let detailVC = CapsuleAssembly.build()
+		detailVC.title = serial
 		viewController?.navigationController?.pushViewController(detailVC, animated: true)
 	}
 

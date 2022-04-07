@@ -30,4 +30,6 @@ protocol CapsulesDisplayLogic: AnyObject {
 	func displayInitForm(_ viewModel: [Capsules.InitForm.Response])
 }
 
-protocol CapsulesRoutingLogic {}
+protocol CapsulesRoutingLogic {
+	func moveToCapsule(serial: String)
+}
