@@ -9,7 +9,7 @@
 import UIKit
 
 enum MissionAssembly {
-    static func build() -> UIViewController {
+	static func build(data: Missions.InitForm.Response) -> UIViewController {
         let presenter = MissionPresenter()
         let worker = MissionWorker()
         let interactor = MissionInteractor(presenter: presenter, worker: worker)
@@ -18,6 +18,9 @@ enum MissionAssembly {
 
         presenter.view = viewController
         router.viewController = viewController
+
+		viewController.mission = data
+		viewController.title = data.missionName
 
         return viewController
     }

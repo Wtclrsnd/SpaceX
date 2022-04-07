@@ -6,6 +6,8 @@
 //  Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
+import UIKit
+
 protocol MissionsDataPassing {
     var dataStore: MissionsDataStore { get }
 }
@@ -13,17 +15,21 @@ protocol MissionsDataPassing {
 protocol MissionsDataStore {}
 
 protocol MissionsBusinessLogic {
-    func requestInitForm(_ request: Missions.InitForm.Request)
+    func getMissions(_ request: Missions.InitForm.Request)
 }
 
-protocol MissionsWorkerLogic {}
+protocol MissionsWorkerLogic {
+	func getMissions(request: URLRequest, completion: @escaping ([MissionData]) -> Void)
+}
 
 protocol MissionsPresentationLogic {
-    func presentInitForm(_ response: Missions.InitForm.Response)
+    func presentInitForm(_ response: [Missions.InitForm.Response])
 }
 
 protocol MissionsDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Missions.InitForm.ViewModel)
+	func displayInitForm(_ data: [Missions.InitForm.Response])
 }
 
-protocol MissionsRoutingLogic {}
+protocol MissionsRoutingLogic {
+	func moveToMission(data: Missions.InitForm.Response)
+}

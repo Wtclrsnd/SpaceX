@@ -15,6 +15,11 @@ final class MissionsRouter: MissionsRoutingLogic, MissionsDataPassing {
     init(dataStore: MissionsDataStore) {
         self.dataStore = dataStore
     }
+
+	func moveToMission(data: Missions.InitForm.Response) {
+		let detailVC = MissionAssembly.build(data: data)
+		viewController?.navigationController?.pushViewController(detailVC, animated: true)
+	}
 }
 
 private extension MissionsRouter {

@@ -12,6 +12,8 @@ final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
     private let presenter: CapsulesPresentationLogic
     private let worker: CapsulesWorkerLogic
 
+	private var capsulesResponse: [Capsules.InitForm.Response] = []
+
     init(
         presenter: CapsulesPresentationLogic,
         worker: CapsulesWorkerLogic
@@ -24,11 +26,24 @@ final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
 		let urlString = "https://api.spacexdata.com/v3/capsules"
 		guard let url = URL(string: urlString) else { return }
 		let request = URLRequest(url: url)
-		worker.getData(request: request, completion: { capsules in
-
-		})
         DispatchQueue.main.async {
-            self.presenter.presentInitForm(Capsules.InitForm.Response())
+			self.worker.getData(request: request, completion: { capsules in
+				for singleCap in capsules {
+					self.capsulesResponse.append(
+						Capsules.InitForm.Response(
+							capsuleSerial: singleCap.capsuleSerial,
+							capsuleID: singleCap.capsuleID,
+							status: singleCap.status,
+							originalLaunch: singleCap.originalLaunch,
+							originalLaunchUnix: singleCap.originalLaunchUnix,
+							landings: singleCap.landings,
+							details: singleCap.details,
+							reuseCount: singleCap.reuseCount
+						)
+					)
+				}
+				self.presenter.presentInitForm(self.capsulesResponse)
+			})
         }
     }
 }

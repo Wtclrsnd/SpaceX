@@ -9,6 +9,8 @@
 import UIKit
 
 final class MissionViewController: UIViewController, MissionDisplayLogic {
+	var mission: Missions.InitForm.Response?
+
     private let interactor: MissionBusinessLogic
     private let router: MissionRoutingLogic
 
@@ -26,7 +28,12 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+		setUpUI()
     }
+
+	private func setUpUI() {
+		view.backgroundColor = .systemBackground
+	}
 
     // MARK: - MissionDisplayLogic
 
