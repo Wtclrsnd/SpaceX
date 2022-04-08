@@ -25,7 +25,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		let textField = UITextField()
 		textField.translatesAutoresizingMaskIntoConstraints = false
 		textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		textField.text = "Capsule Serial "
+		textField.text = "Capsule Serial: "
 		textField.font = .systemFont(ofSize: 28)
 		return textField
 	}()
@@ -34,7 +34,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "capsuleID"
+		label.text = "capsuleID: "
 		label.font = .systemFont(ofSize: 28)
 		return label
 	}()
@@ -43,7 +43,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "status"
+		label.text = "status: "
 		label.font = .systemFont(ofSize: 28)
 		return label
 	}()
@@ -52,7 +52,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "landings"
+		label.text = "landings: "
 		label.font = .systemFont(ofSize: 28)
 		return label
 	}()
@@ -60,8 +60,8 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 	private lazy var detailsLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "details"
+		label.numberOfLines = 3
+		label.text = "details: "
 		label.font = .systemFont(ofSize: 28)
 		return label
 	}()
@@ -70,13 +70,15 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		label.text = "reuseCount"
+		label.text = "reuseCount: "
 		label.font = .systemFont(ofSize: 28)
 		return label
 	}()
 
     private let interactor: CapsuleBusinessLogic
     private let router: CapsuleRoutingLogic
+
+	var data: Capsules.InitForm.Response?
 
     init(interactor: CapsuleBusinessLogic, router: CapsuleRoutingLogic) {
         self.interactor = interactor
@@ -109,6 +111,13 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		stack.addArrangedSubview(landingsLabel)
 		stack.addArrangedSubview(detailsLabel)
 		stack.addArrangedSubview(reuseCountLabel)
+
+		serialTextField.text?.append(data?.capsuleSerial ?? "")
+		capsuleIDLabel.text?.append(data?.capsuleID.rawValue ?? "")
+		statusLabel.text?.append(data?.status.rawValue ?? "")
+		landingsLabel.text?.append(String(data?.landings ?? 0))
+		detailsLabel.text?.append(data?.details ?? "")
+		reuseCountLabel.text?.append(String(data?.reuseCount ?? 0))
 	}
 
     // MARK: - CapsuleDisplayLogic

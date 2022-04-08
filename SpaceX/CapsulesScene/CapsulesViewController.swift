@@ -74,6 +74,6 @@ extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		router.moveToCapsule(serial: capsules[indexPath.row].capsuleSerial)
+		router.moveToCapsule(data: capsules[indexPath.row])
 	}
 }

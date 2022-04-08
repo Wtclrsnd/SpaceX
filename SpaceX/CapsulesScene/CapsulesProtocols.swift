@@ -31,5 +31,5 @@ protocol CapsulesDisplayLogic: AnyObject {
 }
 
 protocol CapsulesRoutingLogic {
-	func moveToCapsule(serial: String)
+	func moveToCapsule(data: Capsules.InitForm.Response)
 }
