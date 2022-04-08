@@ -15,27 +15,28 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		let stack = UIStackView()
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		stack.axis = .vertical
+		stack.alignment = .center
 		stack.distribution = .fill
 		stack.spacing = 10
 		return stack
 	}()
 
-	private lazy var capsuleIDTextField: UITextField = {
+	private lazy var serialTextField: UITextField = {
 		let textField = UITextField()
 		textField.translatesAutoresizingMaskIntoConstraints = false
 		textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		textField.text = "Capsule ID: "
+		textField.text = "Capsule Serial "
 		textField.font = .systemFont(ofSize: 28)
 		return textField
 	}()
 
-	private lazy var statusTextField: UITextField = {
-		let textField = UITextField()
-		textField.translatesAutoresizingMaskIntoConstraints = false
-		textField.heightAnchor.constraint(equalToConstant: 30).isActive = true
-		textField.text = "Status: "
-		textField.font = .systemFont(ofSize: 28)
-		return textField
+	private lazy var capsuleIDLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+		label.text = "capsuleID"
+		label.font = .systemFont(ofSize: 28)
+		return label
 	}()
 
 	private lazy var statusLabel: UILabel = {
@@ -73,6 +74,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		label.font = .systemFont(ofSize: 28)
 		return label
 	}()
+
     private let interactor: CapsuleBusinessLogic
     private let router: CapsuleRoutingLogic
 
@@ -95,6 +97,18 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 
 	private func setUpUI() {
 		view.backgroundColor = .systemBackground
+
+		view.addSubview(stack)
+		stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
+		stack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+		stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50).isActive = true
+
+		stack.addArrangedSubview(serialTextField)
+		stack.addArrangedSubview(capsuleIDLabel)
+		stack.addArrangedSubview(statusLabel)
+		stack.addArrangedSubview(landingsLabel)
+		stack.addArrangedSubview(detailsLabel)
+		stack.addArrangedSubview(reuseCountLabel)
 	}
 
     // MARK: - CapsuleDisplayLogic
