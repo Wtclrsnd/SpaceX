@@ -23,11 +23,11 @@ protocol MissionsWorkerLogic {
 }
 
 protocol MissionsPresentationLogic {
-    func presentInitForm(_ response: Missions.InitForm.Response)
+    func presentInitForm(_ response: [Missions.InitForm.Response])
 }
 
 protocol MissionsDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Missions.InitForm.ViewModel)
+	func displayInitForm(_ data: [Missions.InitForm.Response])
 }
 
 protocol MissionsRoutingLogic {}

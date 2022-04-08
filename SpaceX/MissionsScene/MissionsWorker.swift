@@ -26,7 +26,7 @@ final class MissionsWorker: MissionsWorkerLogic {
 					[MissionData].self,
 					from: data
 				)
-				print(responseObject)
+//				print(responseObject)
 				completion(responseObject)
 			} catch let error {
 				print(String(describing: error.localizedDescription))

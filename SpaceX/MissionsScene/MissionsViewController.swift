@@ -50,7 +50,12 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
 
     // MARK: - MissionsDisplayLogic
 
-    func displayInitForm(_ viewModel: Missions.InitForm.ViewModel) {}
+	func displayInitForm(_ data: [Missions.InitForm.Response]) {
+		missions = data
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
+	}
 
     // MARK: - Private
 
@@ -66,7 +71,7 @@ extension MissionsViewController: UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//		cell.textLabel?.text
+		cell.textLabel?.text = missions[indexPath.row].missionName
 		return cell
 	}
 

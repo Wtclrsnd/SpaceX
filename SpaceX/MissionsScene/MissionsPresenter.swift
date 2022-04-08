@@ -9,7 +9,7 @@
 final class MissionsPresenter: MissionsPresentationLogic {
     weak var view: MissionsDisplayLogic?
 
-    func presentInitForm(_ response: Missions.InitForm.Response) {
-        view?.displayInitForm(Missions.InitForm.ViewModel())
+    func presentInitForm(_ response: [Missions.InitForm.Response]) {
+        view?.displayInitForm(response)
     }
 }
