@@ -9,18 +9,18 @@
 import UIKit
 
 final class CapsuleRouter: CapsuleRoutingLogic, CapsuleDataPassing {
-    weak var viewController: UIViewController?
-    let dataStore: CapsuleDataStore
+	weak var viewController: UIViewController?
+	let dataStore: CapsuleDataStore
 
-    init(dataStore: CapsuleDataStore) {
-        self.dataStore = dataStore
-    }
+	init(dataStore: CapsuleDataStore) {
+		self.dataStore = dataStore
+	}
 }
 
 private extension CapsuleRouter {
-//    func passDataTo_() {
-//        source: CapsuleDataStore,
-//        destination: inout SomewhereDataStore
-//    ) {
-//    }
+	//    func passDataTo_() {
+	//        source: CapsuleDataStore,
+	//        destination: inout SomewhereDataStore
+	//    ) {
+	//    }
 }

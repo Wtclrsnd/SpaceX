@@ -9,20 +9,20 @@
 import UIKit
 
 final class EventInteractor: EventBusinessLogic, EventDataStore {
-    private let presenter: EventPresentationLogic
-    private let worker: EventWorkerLogic
+	private let presenter: EventPresentationLogic
+	private let worker: EventWorkerLogic
 
-    init(
-        presenter: EventPresentationLogic,
-        worker: EventWorkerLogic
-    ) {
-        self.presenter = presenter
-        self.worker = worker
-    }
+	init(
+		presenter: EventPresentationLogic,
+		worker: EventWorkerLogic
+	) {
+		self.presenter = presenter
+		self.worker = worker
+	}
 
-    func requestInitForm(_ request: Event.InitForm.Request) {
-        DispatchQueue.main.async {
-            self.presenter.presentInitForm(Event.InitForm.Response())
-        }
-    }
+	func requestInitForm(_ request: Event.InitForm.Request) {
+		DispatchQueue.main.async {
+			self.presenter.presentInitForm(Event.InitForm.Response())
+		}
+	}
 }

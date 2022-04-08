@@ -9,13 +9,13 @@
 import Foundation
 
 protocol CapsulesDataPassing {
-    var dataStore: CapsulesDataStore { get }
+	var dataStore: CapsulesDataStore { get }
 }
 
 protocol CapsulesDataStore {}
 
 protocol CapsulesBusinessLogic {
-    func getCapsulesData(_ request: Capsules.InitForm.Request)
+	func getCapsulesData(_ request: Capsules.InitForm.Request)
 }
 
 protocol CapsulesWorkerLogic {
@@ -23,7 +23,7 @@ protocol CapsulesWorkerLogic {
 }
 
 protocol CapsulesPresentationLogic {
-    func presentInitForm(_ response: [Capsules.InitForm.Response])
+	func presentInitForm(_ response: [Capsules.InitForm.Response])
 }
 
 protocol CapsulesDisplayLogic: AnyObject {

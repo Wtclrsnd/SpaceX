@@ -7,9 +7,9 @@
 //
 
 final class EventPresenter: EventPresentationLogic {
-    weak var view: EventDisplayLogic?
+	weak var view: EventDisplayLogic?
 
-    func presentInitForm(_ response: Event.InitForm.Response) {
-        view?.displayInitForm(Event.InitForm.ViewModel())
-    }
+	func presentInitForm(_ response: Event.InitForm.Response) {
+		view?.displayInitForm(Event.InitForm.ViewModel())
+	}
 }

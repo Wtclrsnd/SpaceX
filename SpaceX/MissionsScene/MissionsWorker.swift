@@ -20,13 +20,12 @@ final class MissionsWorker: MissionsWorkerLogic {
 			}
 
 			let jsonDecoder = JSONDecoder()
-
 			do {
 				let responseObject = try jsonDecoder.decode(
 					[MissionData].self,
 					from: data
 				)
-//				print(responseObject)
+				//				print(responseObject)
 				completion(responseObject)
 			} catch let error {
 				print(String(describing: error.localizedDescription))

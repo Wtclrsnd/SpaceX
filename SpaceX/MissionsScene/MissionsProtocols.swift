@@ -9,13 +9,13 @@
 import UIKit
 
 protocol MissionsDataPassing {
-    var dataStore: MissionsDataStore { get }
+	var dataStore: MissionsDataStore { get }
 }
 
 protocol MissionsDataStore {}
 
 protocol MissionsBusinessLogic {
-    func getMissions(_ request: Missions.InitForm.Request)
+	func getMissions(_ request: Missions.InitForm.Request)
 }
 
 protocol MissionsWorkerLogic {
@@ -23,7 +23,7 @@ protocol MissionsWorkerLogic {
 }
 
 protocol MissionsPresentationLogic {
-    func presentInitForm(_ response: [Missions.InitForm.Response])
+	func presentInitForm(_ response: [Missions.InitForm.Response])
 }
 
 protocol MissionsDisplayLogic: AnyObject {

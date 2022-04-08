@@ -9,24 +9,24 @@
 import UIKit
 
 final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
-    private let presenter: CapsulesPresentationLogic
-    private let worker: CapsulesWorkerLogic
+	private let presenter: CapsulesPresentationLogic
+	private let worker: CapsulesWorkerLogic
 
 	private var capsulesResponse: [Capsules.InitForm.Response] = []
 
-    init(
-        presenter: CapsulesPresentationLogic,
-        worker: CapsulesWorkerLogic
-    ) {
-        self.presenter = presenter
-        self.worker = worker
-    }
+	init(
+		presenter: CapsulesPresentationLogic,
+		worker: CapsulesWorkerLogic
+	) {
+		self.presenter = presenter
+		self.worker = worker
+	}
 
-    func getCapsulesData(_ request: Capsules.InitForm.Request) {
+	func getCapsulesData(_ request: Capsules.InitForm.Request) {
 		let urlString = "https://api.spacexdata.com/v3/capsules"
 		guard let url = URL(string: urlString) else { return }
 		let request = URLRequest(url: url)
-        DispatchQueue.main.async {
+		DispatchQueue.main.async {
 			self.worker.getData(request: request, completion: { capsules in
 				for singleCap in capsules {
 					self.capsulesResponse.append(
@@ -44,6 +44,6 @@ final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
 				}
 				self.presenter.presentInitForm(self.capsulesResponse)
 			})
-        }
-    }
+		}
+	}
 }

@@ -7,9 +7,9 @@
 //
 
 enum Mission {
-    enum InitForm {
-        struct Request {}
-        struct Response {}
-        struct ViewModel {}
-    }
+	enum InitForm {
+		struct Request {}
+		struct Response {}
+		struct ViewModel {}
+	}
 }

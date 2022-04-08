@@ -9,18 +9,18 @@
 import UIKit
 
 final class MissionRouter: MissionRoutingLogic, MissionDataPassing {
-    weak var viewController: UIViewController?
-    let dataStore: MissionDataStore
+	weak var viewController: UIViewController?
+	let dataStore: MissionDataStore
 
-    init(dataStore: MissionDataStore) {
-        self.dataStore = dataStore
-    }
+	init(dataStore: MissionDataStore) {
+		self.dataStore = dataStore
+	}
 }
 
 private extension MissionRouter {
-//    func passDataTo_() {
-//        source: MissionDataStore,
-//        destination: inout SomewhereDataStore
-//    ) {
-//    }
+	//    func passDataTo_() {
+	//        source: MissionDataStore,
+	//        destination: inout SomewhereDataStore
+	//    ) {
+	//    }
 }

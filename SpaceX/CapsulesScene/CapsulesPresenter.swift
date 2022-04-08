@@ -7,9 +7,9 @@
 //
 
 final class CapsulesPresenter: CapsulesPresentationLogic {
-    weak var view: CapsulesDisplayLogic?
+	weak var view: CapsulesDisplayLogic?
 
-    func presentInitForm(_ response: [Capsules.InitForm.Response]) {
-        view?.displayInitForm(response)
-    }
+	func presentInitForm(_ response: [Capsules.InitForm.Response]) {
+		view?.displayInitForm(response)
+	}
 }

@@ -9,16 +9,16 @@
 import UIKit
 
 enum HistoryAssembly {
-    static func build() -> UIViewController {
-        let presenter = HistoryPresenter()
-        let worker = HistoryWorker()
-        let interactor = HistoryInteractor(presenter: presenter, worker: worker)
-        let router = HistoryRouter(dataStore: interactor)
-        let viewController = HistoryViewController(interactor: interactor, router: router)
+	static func build() -> UIViewController {
+		let presenter = HistoryPresenter()
+		let worker = HistoryWorker()
+		let interactor = HistoryInteractor(presenter: presenter, worker: worker)
+		let router = HistoryRouter(dataStore: interactor)
+		let viewController = HistoryViewController(interactor: interactor, router: router)
 
-        presenter.view = viewController
-        router.viewController = viewController
+		presenter.view = viewController
+		router.viewController = viewController
 
-        return viewController
-    }
+		return viewController
+	}
 }
