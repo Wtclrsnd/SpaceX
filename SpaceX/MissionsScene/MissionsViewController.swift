@@ -9,6 +9,14 @@
 import UIKit
 
 final class MissionsViewController: UIViewController, MissionsDisplayLogic {
+	private lazy var tableView: UITableView = {
+		let tableView = UITableView()
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		return tableView
+	}()
+
+	var missions: [Missions.InitForm.Response] = []
+
     private let interactor: MissionsBusinessLogic
     private let router: MissionsRoutingLogic
 
@@ -26,9 +34,19 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+		setUpUI()
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.reloadData()
+    }
+
+	private func setUpUI() {
 		view.backgroundColor = .systemBackground
 		title = "SpaceX Missions"
-    }
+
+		view.addSubview(tableView)
+		tableView.frame = view.bounds
+	}
 
     // MARK: - MissionsDisplayLogic
 
@@ -37,6 +55,22 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
     // MARK: - Private
 
     private func initForm() {
-        interactor.requestInitForm(Missions.InitForm.Request())
+        interactor.getMissions(Missions.InitForm.Request())
     }
+}
+
+extension MissionsViewController: UITableViewDelegate, UITableViewDataSource {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return missions.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//		cell.textLabel?.text
+		return cell
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//		router.moveToCapsule(data: capsules[indexPath.row])
+	}
 }

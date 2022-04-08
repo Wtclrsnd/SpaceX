@@ -20,8 +20,14 @@ final class MissionsInteractor: MissionsBusinessLogic, MissionsDataStore {
         self.worker = worker
     }
 
-    func requestInitForm(_ request: Missions.InitForm.Request) {
+    func getMissions(_ request: Missions.InitForm.Request) {
+//		worker.getMissions(request: URLRequest, completion: @escaping () -> Void)
+		let urlString = "https://api.spacexdata.com/v3/missions"
+		guard let url = URL(string: urlString) else { return }
+		let request = URLRequest(url: url)
         DispatchQueue.main.async {
+			self.worker.getMissions(request: request, completion: { _ in
+			})
             self.presenter.presentInitForm(Missions.InitForm.Response())
         }
     }
