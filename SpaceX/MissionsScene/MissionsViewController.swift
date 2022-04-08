@@ -76,6 +76,6 @@ extension MissionsViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//		router.moveToCapsule(data: capsules[indexPath.row])
+		router.moveToMission(data: missions[indexPath.row])
 	}
 }

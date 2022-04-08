@@ -30,4 +30,6 @@ protocol MissionsDisplayLogic: AnyObject {
 	func displayInitForm(_ data: [Missions.InitForm.Response])
 }
 
-protocol MissionsRoutingLogic {}
+protocol MissionsRoutingLogic {
+	func moveToMission(data: Missions.InitForm.Response)
+}
