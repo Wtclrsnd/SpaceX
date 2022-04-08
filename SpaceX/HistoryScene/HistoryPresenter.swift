@@ -7,9 +7,9 @@
 //
 
 final class HistoryPresenter: HistoryPresentationLogic {
-    weak var view: HistoryDisplayLogic?
+	weak var view: HistoryDisplayLogic?
 
-    func presentInitForm(_ response: History.InitForm.Response) {
-        view?.displayInitForm(History.InitForm.ViewModel())
-    }
+	func presentInitForm(_ response: [History.InitForm.Response]) {
+		view?.displayInitForm(response)
+	}
 }

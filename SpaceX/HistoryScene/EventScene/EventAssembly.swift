@@ -9,16 +9,18 @@
 import UIKit
 
 enum EventAssembly {
-    static func build() -> UIViewController {
-        let presenter = EventPresenter()
-        let worker = EventWorker()
-        let interactor = EventInteractor(presenter: presenter, worker: worker)
-        let router = EventRouter(dataStore: interactor)
-        let viewController = EventViewController(interactor: interactor, router: router)
+	static func build(data: History.InitForm.Response) -> UIViewController {
+		let presenter = EventPresenter()
+		let worker = EventWorker()
+		let interactor = EventInteractor(presenter: presenter, worker: worker)
+		let router = EventRouter(dataStore: interactor)
+		let viewController = EventViewController(interactor: interactor, router: router)
 
-        presenter.view = viewController
-        router.viewController = viewController
+		presenter.view = viewController
+		router.viewController = viewController
 
-        return viewController
-    }
+		viewController.event = data
+
+		return viewController
+	}
 }

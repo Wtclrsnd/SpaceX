@@ -7,15 +7,15 @@
 //
 
 enum Missions {
-    enum InitForm {
-        struct Request {}
-        struct Response {
+	enum InitForm {
+		struct Request {}
+		struct Response {
 			let missionName: String
 			let missionID: String
 			let missionDescription: String
 		}
-        struct ViewModel {}
-    }
+		struct ViewModel {}
+	}
 }
 
 struct MissionData: Codable {

@@ -15,30 +15,30 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
 		return tableView
 	}()
 
-	var missions: [Missions.InitForm.Response] = []
+	private var missions: [Missions.InitForm.Response] = []
 
-    private let interactor: MissionsBusinessLogic
-    private let router: MissionsRoutingLogic
+	private let interactor: MissionsBusinessLogic
+	private let router: MissionsRoutingLogic
 
-    init(interactor: MissionsBusinessLogic, router: MissionsRoutingLogic) {
-        self.interactor = interactor
-        self.router = router
-        super.init(nibName: nil, bundle: nil)
-    }
+	init(interactor: MissionsBusinessLogic, router: MissionsRoutingLogic) {
+		self.interactor = interactor
+		self.router = router
+		super.init(nibName: nil, bundle: nil)
+	}
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+	@available(*, unavailable)
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initForm()
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		initForm()
 		setUpUI()
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.reloadData()
-    }
+	}
 
 	private func setUpUI() {
 		view.backgroundColor = .systemBackground
@@ -48,7 +48,7 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
 		tableView.frame = view.bounds
 	}
 
-    // MARK: - MissionsDisplayLogic
+	// MARK: - MissionsDisplayLogic
 
 	func displayInitForm(_ data: [Missions.InitForm.Response]) {
 		missions = data
@@ -57,11 +57,11 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
 		}
 	}
 
-    // MARK: - Private
+	// MARK: - Private
 
-    private func initForm() {
-        interactor.getMissions(Missions.InitForm.Request())
-    }
+	private func initForm() {
+		interactor.getMissions(Missions.InitForm.Request())
+	}
 }
 
 extension MissionsViewController: UITableViewDelegate, UITableViewDataSource {

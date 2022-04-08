@@ -9,8 +9,6 @@
 import UIKit
 
 final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
-	private lazy var scrollView = UIScrollView()
-
 	private lazy var stack: UIStackView = {
 		let stack = UIStackView()
 		stack.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +58,8 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 	private lazy var detailsLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.numberOfLines = 3
+		label.numberOfLines = 0
+		label.textAlignment = .center
 		label.text = "details: "
 		label.font = .systemFont(ofSize: 28)
 		return label
@@ -75,27 +74,27 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		return label
 	}()
 
-    private let interactor: CapsuleBusinessLogic
-    private let router: CapsuleRoutingLogic
+	private let interactor: CapsuleBusinessLogic
+	private let router: CapsuleRoutingLogic
 
 	var data: Capsules.InitForm.Response?
 
-    init(interactor: CapsuleBusinessLogic, router: CapsuleRoutingLogic) {
-        self.interactor = interactor
-        self.router = router
-        super.init(nibName: nil, bundle: nil)
-    }
+	init(interactor: CapsuleBusinessLogic, router: CapsuleRoutingLogic) {
+		self.interactor = interactor
+		self.router = router
+		super.init(nibName: nil, bundle: nil)
+	}
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+	@available(*, unavailable)
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initForm()
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		initForm()
 		setUpUI()
-    }
+	}
 
 	private func setUpUI() {
 		view.backgroundColor = .systemBackground
@@ -120,13 +119,13 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
 		reuseCountLabel.text?.append(String(data?.reuseCount ?? 0))
 	}
 
-    // MARK: - CapsuleDisplayLogic
+	// MARK: - CapsuleDisplayLogic
 
-    func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel) {}
+	func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel) {}
 
-    // MARK: - Private
+	// MARK: - Private
 
-    private func initForm() {
-        interactor.requestInitForm(Capsule.InitForm.Request())
-    }
+	private func initForm() {
+		interactor.requestInitForm(Capsule.InitForm.Request())
+	}
 }

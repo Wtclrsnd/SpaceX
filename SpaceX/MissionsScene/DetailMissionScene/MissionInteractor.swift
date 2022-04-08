@@ -9,20 +9,20 @@
 import UIKit
 
 final class MissionInteractor: MissionBusinessLogic, MissionDataStore {
-    private let presenter: MissionPresentationLogic
-    private let worker: MissionWorkerLogic
+	private let presenter: MissionPresentationLogic
+	private let worker: MissionWorkerLogic
 
-    init(
-        presenter: MissionPresentationLogic,
-        worker: MissionWorkerLogic
-    ) {
-        self.presenter = presenter
-        self.worker = worker
-    }
+	init(
+		presenter: MissionPresentationLogic,
+		worker: MissionWorkerLogic
+	) {
+		self.presenter = presenter
+		self.worker = worker
+	}
 
-    func requestInitForm(_ request: Mission.InitForm.Request) {
-        DispatchQueue.main.async {
-            self.presenter.presentInitForm(Mission.InitForm.Response())
-        }
-    }
+	func requestInitForm(_ request: Mission.InitForm.Request) {
+		DispatchQueue.main.async {
+			self.presenter.presentInitForm(Mission.InitForm.Response())
+		}
+	}
 }

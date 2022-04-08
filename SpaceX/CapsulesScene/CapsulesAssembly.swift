@@ -9,16 +9,16 @@
 import UIKit
 
 enum CapsulesAssembly {
-    static func build() -> UIViewController {
-        let presenter = CapsulesPresenter()
-        let worker = CapsulesWorker()
-        let interactor = CapsulesInteractor(presenter: presenter, worker: worker)
-        let router = CapsulesRouter(dataStore: interactor)
-        let viewController = CapsulesViewController(interactor: interactor, router: router)
+	static func build() -> UIViewController {
+		let presenter = CapsulesPresenter()
+		let worker = CapsulesWorker()
+		let interactor = CapsulesInteractor(presenter: presenter, worker: worker)
+		let router = CapsulesRouter(dataStore: interactor)
+		let viewController = CapsulesViewController(interactor: interactor, router: router)
 
-        presenter.view = viewController
-        router.viewController = viewController
+		presenter.view = viewController
+		router.viewController = viewController
 
-        return viewController
-    }
+		return viewController
+	}
 }

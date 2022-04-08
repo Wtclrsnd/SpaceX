@@ -7,23 +7,23 @@
 //
 
 protocol EventDataPassing {
-    var dataStore: EventDataStore { get }
+	var dataStore: EventDataStore { get }
 }
 
 protocol EventDataStore {}
 
 protocol EventBusinessLogic {
-    func requestInitForm(_ request: Event.InitForm.Request)
+	func requestInitForm(_ request: Event.InitForm.Request)
 }
 
 protocol EventWorkerLogic {}
 
 protocol EventPresentationLogic {
-    func presentInitForm(_ response: Event.InitForm.Response)
+	func presentInitForm(_ response: Event.InitForm.Response)
 }
 
 protocol EventDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Event.InitForm.ViewModel)
+	func displayInitForm(_ viewModel: Event.InitForm.ViewModel)
 }
 
 protocol EventRoutingLogic {}

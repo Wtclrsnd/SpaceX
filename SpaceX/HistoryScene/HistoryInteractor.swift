@@ -9,20 +9,36 @@
 import UIKit
 
 final class HistoryInteractor: HistoryBusinessLogic, HistoryDataStore {
-    private let presenter: HistoryPresentationLogic
-    private let worker: HistoryWorkerLogic
+	private var events: [History.InitForm.Response] = []
 
-    init(
-        presenter: HistoryPresentationLogic,
-        worker: HistoryWorkerLogic
-    ) {
-        self.presenter = presenter
-        self.worker = worker
-    }
+	private let presenter: HistoryPresentationLogic
+	private let worker: HistoryWorkerLogic
 
-    func requestInitForm(_ request: History.InitForm.Request) {
-        DispatchQueue.main.async {
-            self.presenter.presentInitForm(History.InitForm.Response())
-        }
-    }
+	init(
+		presenter: HistoryPresentationLogic,
+		worker: HistoryWorkerLogic
+	) {
+		self.presenter = presenter
+		self.worker = worker
+	}
+
+	func getData(_ request: History.InitForm.Request) {
+		let urlString = "https://api.spacexdata.com/v3/history"
+		guard let url = URL(string: urlString) else { return }
+		let request = URLRequest(url: url)
+		DispatchQueue.main.async {
+			self.worker.getEvents(request: request, completion: { eventsData in
+				for event in eventsData {
+					self.events.append(
+						History.InitForm.Response(
+							title: event.title,
+							eventDateUTC: event.eventDateUTC,
+							details: event.details
+						)
+					)
+				}
+				self.presenter.presentInitForm(self.events)
+			})
+		}
+	}
 }

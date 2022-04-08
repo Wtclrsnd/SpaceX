@@ -7,23 +7,23 @@
 //
 
 protocol CapsuleDataPassing {
-    var dataStore: CapsuleDataStore { get }
+	var dataStore: CapsuleDataStore { get }
 }
 
 protocol CapsuleDataStore {}
 
 protocol CapsuleBusinessLogic {
-    func requestInitForm(_ request: Capsule.InitForm.Request)
+	func requestInitForm(_ request: Capsule.InitForm.Request)
 }
 
 protocol CapsuleWorkerLogic {}
 
 protocol CapsulePresentationLogic {
-    func presentInitForm(_ response: Capsule.InitForm.Response)
+	func presentInitForm(_ response: Capsule.InitForm.Response)
 }
 
 protocol CapsuleDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel)
+	func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel)
 }
 
 protocol CapsuleRoutingLogic {}
