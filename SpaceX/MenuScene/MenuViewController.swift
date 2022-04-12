@@ -18,28 +18,28 @@ final class MenuViewController: UIViewController, MenuDisplayLogic {
 
 	private let menuRows = ["History", "Missions", "Capsules"]
 
-    private let interactor: MenuBusinessLogic
-    private let router: MenuRoutingLogic
+	private let interactor: MenuBusinessLogic
+	private let router: MenuRoutingLogic
 
-    init(interactor: MenuBusinessLogic, router: MenuRoutingLogic) {
-        self.interactor = interactor
-        self.router = router
-        super.init(nibName: nil, bundle: nil)
-    }
+	init(interactor: MenuBusinessLogic, router: MenuRoutingLogic) {
+		self.interactor = interactor
+		self.router = router
+		super.init(nibName: nil, bundle: nil)
+	}
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+	@available(*, unavailable)
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initForm()
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		initForm()
 		setUpUI()
 		tableView.delegate = self
 		tableView.dataSource = self
 		tableView.reloadData()
-    }
+	}
 
 	func setUpUI() {
 		navigationController?.navigationBar.prefersLargeTitles = true
