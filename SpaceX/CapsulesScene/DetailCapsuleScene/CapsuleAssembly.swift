@@ -20,7 +20,7 @@ enum CapsuleAssembly {
         router.viewController = viewController
 
         viewController.data = data
-        
+
         return viewController
     }
 }
