@@ -9,23 +9,23 @@
 import UIKit
 
 final class HistoryRouter: HistoryRoutingLogic, HistoryDataPassing {
-	weak var viewController: UIViewController?
-	let dataStore: HistoryDataStore
+    weak var viewController: UIViewController?
+    let dataStore: HistoryDataStore
 
-	init(dataStore: HistoryDataStore) {
-		self.dataStore = dataStore
-	}
+    init(dataStore: HistoryDataStore) {
+        self.dataStore = dataStore
+    }
 
-	func moveToEvent(data: History.InitForm.Response) {
-		let detailVC = EventAssembly.build(data: data)
-		viewController?.navigationController?.pushViewController(detailVC, animated: true)
-	}
+    func moveToEvent(data: History.InitForm.Response) {
+        let detailVC = EventAssembly.build(data: data)
+        viewController?.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 private extension HistoryRouter {
-	//    func passDataTo_() {
-	//        source: HistoryDataStore,
-	//        destination: inout SomewhereDataStore
-	//    ) {
-	//    }
+    //    func passDataTo_() {
+    //        source: HistoryDataStore,
+    //        destination: inout SomewhereDataStore
+    //    ) {
+    //    }
 }

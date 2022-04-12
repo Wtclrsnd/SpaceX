@@ -9,18 +9,18 @@
 import UIKit
 
 final class EventRouter: EventRoutingLogic, EventDataPassing {
-	weak var viewController: UIViewController?
-	let dataStore: EventDataStore
+    weak var viewController: UIViewController?
+    let dataStore: EventDataStore
 
-	init(dataStore: EventDataStore) {
-		self.dataStore = dataStore
-	}
+    init(dataStore: EventDataStore) {
+        self.dataStore = dataStore
+    }
 }
 
 private extension EventRouter {
-	//    func passDataTo_() {
-	//        source: EventDataStore,
-	//        destination: inout SomewhereDataStore
-	//    ) {
-	//    }
+    //    func passDataTo_() {
+    //        source: EventDataStore,
+    //        destination: inout SomewhereDataStore
+    //    ) {
+    //    }
 }

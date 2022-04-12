@@ -9,27 +9,27 @@
 import Foundation
 
 protocol CapsulesDataPassing {
-	var dataStore: CapsulesDataStore { get }
+    var dataStore: CapsulesDataStore { get }
 }
 
 protocol CapsulesDataStore {}
 
 protocol CapsulesBusinessLogic {
-	func getCapsulesData(_ request: Capsules.InitForm.Request)
+    func getCapsulesData(_ request: Capsules.InitForm.Request)
 }
 
 protocol CapsulesWorkerLogic {
-	func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void)
+    func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void)
 }
 
 protocol CapsulesPresentationLogic {
-	func presentInitForm(_ response: [Capsules.InitForm.Response])
+    func presentInitForm(_ response: [Capsules.InitForm.Response])
 }
 
 protocol CapsulesDisplayLogic: AnyObject {
-	func displayInitForm(_ viewModel: [Capsules.InitForm.Response])
+    func displayInitForm(_ viewModel: [Capsules.InitForm.Response])
 }
 
 protocol CapsulesRoutingLogic {
-	func moveToCapsule(data: Capsules.InitForm.Response)
+    func moveToCapsule(data: Capsules.InitForm.Response)
 }

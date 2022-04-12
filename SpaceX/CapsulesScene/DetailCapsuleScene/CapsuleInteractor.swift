@@ -9,20 +9,20 @@
 import UIKit
 
 final class CapsuleInteractor: CapsuleBusinessLogic, CapsuleDataStore {
-	private let presenter: CapsulePresentationLogic
-	private let worker: CapsuleWorkerLogic
+    private let presenter: CapsulePresentationLogic
+    private let worker: CapsuleWorkerLogic
 
-	init(
-		presenter: CapsulePresentationLogic,
-		worker: CapsuleWorkerLogic
-	) {
-		self.presenter = presenter
-		self.worker = worker
-	}
+    init(
+        presenter: CapsulePresentationLogic,
+        worker: CapsuleWorkerLogic
+    ) {
+        self.presenter = presenter
+        self.worker = worker
+    }
 
-	func requestInitForm(_ request: Capsule.InitForm.Request) {
-		DispatchQueue.main.async {
-			self.presenter.presentInitForm(Capsule.InitForm.Response())
-		}
-	}
+    func requestInitForm(_ request: Capsule.InitForm.Request) {
+        DispatchQueue.main.async {
+            self.presenter.presentInitForm(Capsule.InitForm.Response())
+        }
+    }
 }

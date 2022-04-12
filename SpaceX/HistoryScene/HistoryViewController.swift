@@ -9,73 +9,73 @@
 import UIKit
 
 final class HistoryViewController: UIViewController, HistoryDisplayLogic {
-	private lazy var tableView: UITableView = {
-		let tableView = UITableView()
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-		return tableView
-	}()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        return tableView
+    }()
 
-	private var events: [History.InitForm.Response] = []
+    private var events: [History.InitForm.Response] = []
 
-	private let interactor: HistoryBusinessLogic
-	private let router: HistoryRoutingLogic
+    private let interactor: HistoryBusinessLogic
+    private let router: HistoryRoutingLogic
 
-	init(interactor: HistoryBusinessLogic, router: HistoryRoutingLogic) {
-		self.interactor = interactor
-		self.router = router
-		super.init(nibName: nil, bundle: nil)
-	}
+    init(interactor: HistoryBusinessLogic, router: HistoryRoutingLogic) {
+        self.interactor = interactor
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
 
-	@available(*, unavailable)
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		initForm()
-		setUpUI()
-		tableView.delegate = self
-		tableView.dataSource = self
-		tableView.reloadData()
-	}
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initForm()
+        setUpUI()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.reloadData()
+    }
 
-	private func setUpUI() {
-		view.backgroundColor = .systemBackground
-		title = "SpaceX History"
+    private func setUpUI() {
+        view.backgroundColor = .systemBackground
+        title = "SpaceX History"
 
-		view.addSubview(tableView)
-		tableView.frame = view.bounds
-	}
+        view.addSubview(tableView)
+        tableView.frame = view.bounds
+    }
 
-	// MARK: - HistoryDisplayLogic
+    // MARK: - HistoryDisplayLogic
 
-	func displayInitForm(_ data: [History.InitForm.Response]) {
-		events = data
-		DispatchQueue.main.async {
-			self.tableView.reloadData()
-		}
-	}
+    func displayInitForm(_ data: [History.InitForm.Response]) {
+        events = data
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 
-	// MARK: - Private
+    // MARK: - Private
 
-	private func initForm() {
-		interactor.getData(History.InitForm.Request())
-	}
+    private func initForm() {
+        interactor.getData(History.InitForm.Request())
+    }
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return events.count
-	}
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return events.count
+    }
 
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-				cell.textLabel?.text = events[indexPath.row].title
-		return cell
-	}
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = events[indexPath.row].title
+        return cell
+    }
 
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		router.moveToEvent(data: events[indexPath.row])
-	}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router.moveToEvent(data: events[indexPath.row])
+    }
 }

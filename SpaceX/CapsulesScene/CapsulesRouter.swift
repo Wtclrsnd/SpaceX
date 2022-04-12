@@ -9,23 +9,23 @@
 import UIKit
 
 final class CapsulesRouter: CapsulesRoutingLogic, CapsulesDataPassing {
-	weak var viewController: UIViewController?
-	let dataStore: CapsulesDataStore
+    weak var viewController: UIViewController?
+    let dataStore: CapsulesDataStore
 
-	func moveToCapsule(data: Capsules.InitForm.Response) {
-		let detailVC = CapsuleAssembly.build(data: data)
-		viewController?.navigationController?.pushViewController(detailVC, animated: true)
-	}
+    func moveToCapsule(data: Capsules.InitForm.Response) {
+        let detailVC = CapsuleAssembly.build(data: data)
+        viewController?.navigationController?.pushViewController(detailVC, animated: true)
+    }
 
-	init(dataStore: CapsulesDataStore) {
-		self.dataStore = dataStore
-	}
+    init(dataStore: CapsulesDataStore) {
+        self.dataStore = dataStore
+    }
 }
 
 private extension CapsulesRouter {
-	//    func passDataTo_() {
-	//        source: CapsulesDataStore,
-	//        destination: inout SomewhereDataStore
-	//    ) {
-	//    }
+    //    func passDataTo_() {
+    //        source: CapsulesDataStore,
+    //        destination: inout SomewhereDataStore
+    //    ) {
+    //    }
 }

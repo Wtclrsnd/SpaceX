@@ -9,31 +9,30 @@
 import Foundation
 
 final class CapsulesWorker: CapsulesWorkerLogic {
-	func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void) {
-		URLSession.shared.dataTask(with: request) { data, _, error in
-			guard error == nil else {
-				print(String(describing: error?.localizedDescription))
-				return
-			}
-			guard let data = data else {
-				return
-			}
+    func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void) {
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard error == nil else {
+                print(String(describing: error?.localizedDescription))
+                return
+            }
+            guard let data = data else {
+                return
+            }
 
-//			print(data)
+            //			print(data)
 
-			let jsonDecoder = JSONDecoder()
+            let jsonDecoder = JSONDecoder()
 
-			do {
-				let responseObject = try jsonDecoder.decode(
-					[Capsules.CapsuleData].self,
-					from: data
-				)
-//				print(responseObject)
-				completion(responseObject)
-			} catch let error {
-				print(String(describing: error.localizedDescription))
-			}
-		}
-		.resume()
-	}
+            do {
+                let responseObject = try jsonDecoder.decode(
+                    [Capsules.CapsuleData].self,
+                    from: data
+                )
+                completion(responseObject)
+            } catch let error {
+                print(String(describing: error.localizedDescription))
+            }
+        }
+        .resume()
+    }
 }

@@ -27,7 +27,7 @@ protocol MenuDisplayLogic: AnyObject {
 }
 
 protocol MenuRoutingLogic {
-	func switchToHistory()
-	func switchToMissions()
-	func switchToCapsules()
+    func switchToHistory()
+    func switchToMissions()
+    func switchToCapsules()
 }

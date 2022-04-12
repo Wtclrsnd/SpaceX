@@ -7,23 +7,23 @@
 //
 
 protocol MissionDataPassing {
-	var dataStore: MissionDataStore { get }
+    var dataStore: MissionDataStore { get }
 }
 
 protocol MissionDataStore {}
 
 protocol MissionBusinessLogic {
-	func requestInitForm(_ request: Mission.InitForm.Request)
+    func requestInitForm(_ request: Mission.InitForm.Request)
 }
 
 protocol MissionWorkerLogic {}
 
 protocol MissionPresentationLogic {
-	func presentInitForm(_ response: Mission.InitForm.Response)
+    func presentInitForm(_ response: Mission.InitForm.Response)
 }
 
 protocol MissionDisplayLogic: AnyObject {
-	func displayInitForm(_ viewModel: Mission.InitForm.ViewModel)
+    func displayInitForm(_ viewModel: Mission.InitForm.ViewModel)
 }
 
 protocol MissionRoutingLogic {}

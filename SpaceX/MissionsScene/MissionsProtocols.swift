@@ -9,27 +9,27 @@
 import UIKit
 
 protocol MissionsDataPassing {
-	var dataStore: MissionsDataStore { get }
+    var dataStore: MissionsDataStore { get }
 }
 
 protocol MissionsDataStore {}
 
 protocol MissionsBusinessLogic {
-	func getMissions(_ request: Missions.InitForm.Request)
+    func getMissions(_ request: Missions.InitForm.Request)
 }
 
 protocol MissionsWorkerLogic {
-	func getMissions(request: URLRequest, completion: @escaping ([MissionData]) -> Void)
+    func getMissions(request: URLRequest, completion: @escaping ([MissionData]) -> Void)
 }
 
 protocol MissionsPresentationLogic {
-	func presentInitForm(_ response: [Missions.InitForm.Response])
+    func presentInitForm(_ response: [Missions.InitForm.Response])
 }
 
 protocol MissionsDisplayLogic: AnyObject {
-	func displayInitForm(_ data: [Missions.InitForm.Response])
+    func displayInitForm(_ data: [Missions.InitForm.Response])
 }
 
 protocol MissionsRoutingLogic {
-	func moveToMission(data: Missions.InitForm.Response)
+    func moveToMission(data: Missions.InitForm.Response)
 }

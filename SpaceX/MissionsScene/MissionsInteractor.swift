@@ -9,36 +9,36 @@
 import UIKit
 
 final class MissionsInteractor: MissionsBusinessLogic, MissionsDataStore {
-	private let presenter: MissionsPresentationLogic
-	private let worker: MissionsWorkerLogic
+    private let presenter: MissionsPresentationLogic
+    private let worker: MissionsWorkerLogic
 
-	private var missions: [Missions.InitForm.Response] = []
+    private var missions: [Missions.InitForm.Response] = []
 
-	init(
-		presenter: MissionsPresentationLogic,
-		worker: MissionsWorkerLogic
-	) {
-		self.presenter = presenter
-		self.worker = worker
-	}
+    init(
+        presenter: MissionsPresentationLogic,
+        worker: MissionsWorkerLogic
+    ) {
+        self.presenter = presenter
+        self.worker = worker
+    }
 
-	func getMissions(_ request: Missions.InitForm.Request) {
-		let urlString = "https://api.spacexdata.com/v3/missions"
-		guard let url = URL(string: urlString) else { return }
-		let request = URLRequest(url: url)
-		DispatchQueue.main.async {
-			self.worker.getMissions(request: request, completion: { missionsData in
-				for mission in missionsData {
-					self.missions.append(
-						Missions.InitForm.Response(
-							missionName: mission.missionName,
-							missionID: mission.missionID,
-							missionDescription: mission.missionDescription
-						)
-					)
-				}
-				self.presenter.presentInitForm(self.missions)
-			})
-		}
-	}
+    func getMissions(_ request: Missions.InitForm.Request) {
+        let urlString = "https://api.spacexdata.com/v3/missions"
+        guard let url = URL(string: urlString) else { return }
+        let request = URLRequest(url: url)
+        DispatchQueue.main.async {
+            self.worker.getMissions(request: request, completion: { missionsData in
+                for mission in missionsData {
+                    self.missions.append(
+                        Missions.InitForm.Response(
+                            missionName: mission.missionName,
+                            missionID: mission.missionID,
+                            missionDescription: mission.missionDescription
+                        )
+                    )
+                }
+                self.presenter.presentInitForm(self.missions)
+            })
+        }
+    }
 }

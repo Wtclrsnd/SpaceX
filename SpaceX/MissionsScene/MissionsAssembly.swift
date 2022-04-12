@@ -9,16 +9,16 @@
 import UIKit
 
 enum MissionsAssembly {
-	static func build() -> UIViewController {
-		let presenter = MissionsPresenter()
-		let worker = MissionsWorker()
-		let interactor = MissionsInteractor(presenter: presenter, worker: worker)
-		let router = MissionsRouter(dataStore: interactor)
-		let viewController = MissionsViewController(interactor: interactor, router: router)
+    static func build() -> UIViewController {
+        let presenter = MissionsPresenter()
+        let worker = MissionsWorker()
+        let interactor = MissionsInteractor(presenter: presenter, worker: worker)
+        let router = MissionsRouter(dataStore: interactor)
+        let viewController = MissionsViewController(interactor: interactor, router: router)
 
-		presenter.view = viewController
-		router.viewController = viewController
+        presenter.view = viewController
+        router.viewController = viewController
 
-		return viewController
-	}
+        return viewController
+    }
 }
