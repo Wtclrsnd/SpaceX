@@ -27,7 +27,7 @@ protocol CapsulesPresentationLogic {
 }
 
 protocol CapsulesDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: [Capsules.InitForm.Response])
+    func displayInitForm(_ data: [Capsules.InitForm.Response])
 }
 
 protocol CapsulesRoutingLogic {

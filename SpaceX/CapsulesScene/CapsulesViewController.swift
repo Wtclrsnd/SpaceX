@@ -48,8 +48,8 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
     }
     // MARK: - CapsulesDisplayLogic
 
-    func displayInitForm(_ viewModel: [Capsules.InitForm.Response]) {
-        capsules = viewModel
+    func displayInitForm(_ data: [Capsules.InitForm.Response]) {
+        capsules = data
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
