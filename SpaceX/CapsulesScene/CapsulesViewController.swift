@@ -15,7 +15,7 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
         return tableView
     }()
 
-    private var capsules: [Capsules.InitForm.Response] = [] //viewModel
+    private var capsules: [Capsules.InitForm.ViewModel] = []
 
     private let interactor: CapsulesBusinessLogic
     private let router: CapsulesRoutingLogic
@@ -48,8 +48,8 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
     }
     // MARK: - CapsulesDisplayLogic
 
-    func displayInitForm(_ data: [Capsules.InitForm.Response]) {
-        capsules = data
+    func displayInitForm(_ viewModel: [Capsules.InitForm.ViewModel]) {
+        capsules = viewModel
         tableView.reloadData()
     }
 
@@ -60,7 +60,7 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
     }
 }
 
-//move table view to content view
+// move table view to content view
 extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return capsules.count

@@ -12,7 +12,7 @@ final class CapsulesRouter: CapsulesRoutingLogic, CapsulesDataPassing {
     weak var viewController: UIViewController?
     let dataStore: CapsulesDataStore
 
-    func moveToCapsule(data: Capsules.InitForm.Response) {
+    func moveToCapsule(data: Capsules.InitForm.ViewModel) {
         let detailVC = CapsuleAssembly.build(data: data)
         viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }

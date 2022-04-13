@@ -9,17 +9,17 @@
 import UIKit
 
 enum CapsuleAssembly {
-    static func build(data: Capsules.InitForm.Response) -> UIViewController {
+    static func build(data: Capsules.InitForm.ViewModel) -> UIViewController {
         let presenter = CapsulePresenter()
         let worker = CapsuleWorker()
-        let interactor = CapsuleInteractor(presenter: presenter, worker: worker) //a data field
+        let interactor = CapsuleInteractor(presenter: presenter, worker: worker) // a data field
         let router = CapsuleRouter(dataStore: interactor)
         let viewController = CapsuleViewController(interactor: interactor, router: router)
 
         presenter.view = viewController
         router.viewController = viewController
 
-        viewController.data = data //to interactor data field
+        viewController.data = data // to interactor data field
 
         return viewController
     }

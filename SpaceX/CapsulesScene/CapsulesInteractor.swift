@@ -25,7 +25,7 @@ final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
     func getCapsulesData(_ request: Capsules.InitForm.Request) {
         let urlString = "https://api.spacexdata.com/v3/capsules"
         guard let url = URL(string: urlString) else { return }
-        let request = URLRequest(url: url) //to worker
+        let request = URLRequest(url: url)
         self.worker.getData(request: request, completion: { capsules in
             for singleCap in capsules {
                 self.capsulesResponse.append(
