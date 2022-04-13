@@ -53,8 +53,6 @@
 		728299E227FDCD5A00223FDA /* MissionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299DA27FDCD5A00223FDA /* MissionAssembly.swift */; };
 		728299E327FDCD5A00223FDA /* MissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299DB27FDCD5A00223FDA /* MissionInteractor.swift */; };
 		728299ED27FDCD9500223FDA /* CapsulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E527FDCD9500223FDA /* CapsulePresenter.swift */; };
-		728299EE27FDCD9500223FDA /* CapsuleWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E627FDCD9500223FDA /* CapsuleWorker.swift */; };
-		728299EF27FDCD9500223FDA /* CapsuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E727FDCD9500223FDA /* CapsuleRouter.swift */; };
 		728299F027FDCD9500223FDA /* CapsuleModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E827FDCD9500223FDA /* CapsuleModels.swift */; };
 		728299F127FDCD9500223FDA /* CapsuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299E927FDCD9500223FDA /* CapsuleViewController.swift */; };
 		728299F227FDCD9500223FDA /* CapsuleProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299EA27FDCD9500223FDA /* CapsuleProtocols.swift */; };
@@ -121,8 +119,6 @@
 		728299DA27FDCD5A00223FDA /* MissionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionAssembly.swift; sourceTree = "<group>"; };
 		728299DB27FDCD5A00223FDA /* MissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionInteractor.swift; sourceTree = "<group>"; };
 		728299E527FDCD9500223FDA /* CapsulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulePresenter.swift; sourceTree = "<group>"; };
-		728299E627FDCD9500223FDA /* CapsuleWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleWorker.swift; sourceTree = "<group>"; };
-		728299E727FDCD9500223FDA /* CapsuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleRouter.swift; sourceTree = "<group>"; };
 		728299E827FDCD9500223FDA /* CapsuleModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleModels.swift; sourceTree = "<group>"; };
 		728299E927FDCD9500223FDA /* CapsuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleViewController.swift; sourceTree = "<group>"; };
 		728299EA27FDCD9500223FDA /* CapsuleProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleProtocols.swift; sourceTree = "<group>"; };
@@ -275,8 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				728299E527FDCD9500223FDA /* CapsulePresenter.swift */,
-				728299E627FDCD9500223FDA /* CapsuleWorker.swift */,
-				728299E727FDCD9500223FDA /* CapsuleRouter.swift */,
 				728299E827FDCD9500223FDA /* CapsuleModels.swift */,
 				728299E927FDCD9500223FDA /* CapsuleViewController.swift */,
 				72C812972807113100276803 /* CapsuleDetailContentView.swift */,
@@ -406,7 +400,6 @@
 				728299DE27FDCD5A00223FDA /* MissionRouter.swift in Sources */,
 				728299CF27FDCB5E00223FDA /* MenuViewController.swift in Sources */,
 				728299E327FDCD5A00223FDA /* MissionInteractor.swift in Sources */,
-				728299EF27FDCD9500223FDA /* CapsuleRouter.swift in Sources */,
 				728299D027FDCB5E00223FDA /* MenuProtocols.swift in Sources */,
 				728299A027FDCA7D00223FDA /* HistoryAssembly.swift in Sources */,
 				7282997A27FDBFD600223FDA /* AppDelegate.swift in Sources */,
@@ -425,7 +418,6 @@
 				728299FF27FDCDE500223FDA /* EventWorker.swift in Sources */,
 				728299DF27FDCD5A00223FDA /* MissionModels.swift in Sources */,
 				72829A0327FDCDE500223FDA /* EventProtocols.swift in Sources */,
-				728299EE27FDCD9500223FDA /* CapsuleWorker.swift in Sources */,
 				728299A127FDCA7D00223FDA /* HistoryInteractor.swift in Sources */,
 				728299DD27FDCD5A00223FDA /* MissionWorker.swift in Sources */,
 				728299F327FDCD9500223FDA /* CapsuleAssembly.swift in Sources */,

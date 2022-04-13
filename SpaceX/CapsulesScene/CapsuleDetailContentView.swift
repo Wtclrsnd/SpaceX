@@ -73,7 +73,7 @@ class CapsuleDetailContentView: UIView {
         return label
     }()
 
-    public var model: Capsules.InitForm.ViewModel?
+    public var model: Capsule.InitForm.ViewModel?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -104,7 +104,6 @@ class CapsuleDetailContentView: UIView {
         stack.addArrangedSubview(detailsLabel)
         stack.addArrangedSubview(reuseCountLabel)
 
-        // pass the data to public content view field (model)
         serialTextField.text?.append(model?.capsuleSerial ?? "")
         capsuleIDLabel.text?.append(model?.capsuleID.rawValue ?? "")
         statusLabel.text?.append(model?.status.rawValue ?? "")

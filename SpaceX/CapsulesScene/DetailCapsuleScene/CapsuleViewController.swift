@@ -10,13 +10,9 @@ import UIKit
 
 final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
     private let interactor: CapsuleBusinessLogic
-    private let router: CapsuleRoutingLogic
 
-    var data: Capsules.InitForm.ViewModel?
-
-    init(interactor: CapsuleBusinessLogic, router: CapsuleRoutingLogic) {
+    init(interactor: CapsuleBusinessLogic) {
         self.interactor = interactor
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -37,13 +33,14 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
-        title = data?.capsuleSerial
-        view().model = data
     }
 
     // MARK: - CapsuleDisplayLogic
 
-    func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel) {}
+    func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel) {
+        title = viewModel.capsuleSerial
+        view().model = viewModel
+    }
 
     // MARK: - Private
 

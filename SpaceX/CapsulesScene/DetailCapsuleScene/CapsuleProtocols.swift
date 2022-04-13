@@ -16,8 +16,6 @@ protocol CapsuleBusinessLogic {
     func requestInitForm(_ request: Capsule.InitForm.Request)
 }
 
-protocol CapsuleWorkerLogic {}
-
 protocol CapsulePresentationLogic {
     func presentInitForm(_ response: Capsule.InitForm.Response)
 }
@@ -25,5 +23,3 @@ protocol CapsulePresentationLogic {
 protocol CapsuleDisplayLogic: AnyObject {
     func displayInitForm(_ viewModel: Capsule.InitForm.ViewModel)
 }
-
-protocol CapsuleRoutingLogic {}

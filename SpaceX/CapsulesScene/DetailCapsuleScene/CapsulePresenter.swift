@@ -10,6 +10,16 @@ final class CapsulePresenter: CapsulePresentationLogic {
     weak var view: CapsuleDisplayLogic?
 
     func presentInitForm(_ response: Capsule.InitForm.Response) {
-        view?.displayInitForm(Capsule.InitForm.ViewModel())
+        let viewModel = Capsule.InitForm.ViewModel(
+            capsuleSerial: response.capsuleSerial,
+            capsuleID: response.capsuleID,
+            status: response.status,
+            originalLaunch: response.originalLaunch,
+            originalLaunchUnix: response.originalLaunchUnix,
+            landings: response.landings,
+            details: response.details,
+            reuseCount: response.reuseCount
+        )
+        view?.displayInitForm(viewModel)
     }
 }

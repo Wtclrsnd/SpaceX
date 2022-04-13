@@ -10,19 +10,29 @@ import UIKit
 
 final class CapsuleInteractor: CapsuleBusinessLogic, CapsuleDataStore {
     private let presenter: CapsulePresentationLogic
-    private let worker: CapsuleWorkerLogic
+
+    var capsuleRaw: Capsules.InitForm.ViewModel?
 
     init(
-        presenter: CapsulePresentationLogic,
-        worker: CapsuleWorkerLogic
+        presenter: CapsulePresentationLogic
     ) {
         self.presenter = presenter
-        self.worker = worker
     }
 
     func requestInitForm(_ request: Capsule.InitForm.Request) {
+        guard let capsuleRaw = capsuleRaw else { return }
+        let capsule = Capsule.InitForm.Response(
+            capsuleSerial: capsuleRaw.capsuleSerial,
+            capsuleID: capsuleRaw.capsuleID,
+            status: capsuleRaw.status,
+            originalLaunch: capsuleRaw.originalLaunch,
+            originalLaunchUnix: capsuleRaw.originalLaunchUnix,
+            landings: capsuleRaw.landings,
+            details: capsuleRaw.details,
+            reuseCount: capsuleRaw.reuseCount
+        )
         DispatchQueue.main.async {
-            self.presenter.presentInitForm(Capsule.InitForm.Response())
+            self.presenter.presentInitForm(capsule)
         }
     }
 }
