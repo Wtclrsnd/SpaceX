@@ -9,7 +9,7 @@
 import UIKit
 
 final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
-//    private var capsules: [Capsules.InitForm.ViewModel] = []
+    private var capsules: [Capsules.InitForm.ViewModel] = []
 
     private let interactor: CapsulesBusinessLogic
     private let router: CapsulesRoutingLogic
@@ -37,16 +37,36 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
         super.viewDidLoad()
         initForm()
         title = "SpaceX Capsules"
+
+        view().tableView.delegate = self
+        view().tableView.dataSource = self
     }
     // MARK: - CapsulesDisplayLogic
 
     func displayInitForm(_ viewModel: [Capsules.InitForm.ViewModel]) {
-        view().capsules = viewModel
+        capsules = viewModel
+        view().tableView.reloadData()
     }
 
     // MARK: - Private
 
     private func initForm() {
         interactor.getCapsulesData(Capsules.InitForm.Request())
+    }
+}
+
+extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return capsules.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = capsules[indexPath.row].capsuleSerial
+        return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router.moveToCapsule(data: capsules[indexPath.row])
     }
 }
