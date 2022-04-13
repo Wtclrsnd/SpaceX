@@ -68,6 +68,7 @@
 		72829A0327FDCDE500223FDA /* EventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FB27FDCDE500223FDA /* EventProtocols.swift */; };
 		72829A0427FDCDE500223FDA /* EventAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FC27FDCDE500223FDA /* EventAssembly.swift */; };
 		72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FD27FDCDE500223FDA /* EventInteractor.swift */; };
+		72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812952806FD5300276803 /* CapsulesContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		728299FB27FDCDE500223FDA /* EventProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProtocols.swift; sourceTree = "<group>"; };
 		728299FC27FDCDE500223FDA /* EventAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssembly.swift; sourceTree = "<group>"; };
 		728299FD27FDCDE500223FDA /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
+		72C812952806FD5300276803 /* CapsulesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				728299B527FDCB2E00223FDA /* CapsulesRouter.swift */,
 				728299B627FDCB2E00223FDA /* CapsulesModels.swift */,
 				728299B727FDCB2E00223FDA /* CapsulesViewController.swift */,
+				72C812952806FD5300276803 /* CapsulesContentView.swift */,
 				728299B827FDCB2E00223FDA /* CapsulesProtocols.swift */,
 				728299B927FDCB2E00223FDA /* CapsulesAssembly.swift */,
 				728299BA27FDCB2E00223FDA /* CapsulesInteractor.swift */,
@@ -429,6 +432,7 @@
 				72829A0427FDCDE500223FDA /* EventAssembly.swift in Sources */,
 				728299BF27FDCB2E00223FDA /* CapsulesViewController.swift in Sources */,
 				728299CD27FDCB5E00223FDA /* MenuRouter.swift in Sources */,
+				72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */,
 				728299C227FDCB2E00223FDA /* CapsulesInteractor.swift in Sources */,
 				728299D227FDCB5E00223FDA /* MenuInteractor.swift in Sources */,
 				7282999E27FDCA7D00223FDA /* HistoryViewController.swift in Sources */,

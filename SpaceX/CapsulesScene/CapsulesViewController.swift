@@ -9,13 +9,7 @@
 import UIKit
 
 final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
-
-    private var capsules: [Capsules.InitForm.ViewModel] = []
+//    private var capsules: [Capsules.InitForm.ViewModel] = []
 
     private let interactor: CapsulesBusinessLogic
     private let router: CapsulesRoutingLogic
@@ -31,48 +25,28 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func view() -> CapsulesContentView {
+        guard let view = self.view as? CapsulesContentView else { return CapsulesContentView() }
+        return view
+    }
+
+    override func loadView() {
+        self.view = CapsulesContentView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
-        setUpUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-
-    private func setUpUI() {
-        view.backgroundColor = .systemBackground
         title = "SpaceX Capsules"
-
-        view.addSubview(tableView)
-        tableView.frame = view.bounds
     }
     // MARK: - CapsulesDisplayLogic
 
     func displayInitForm(_ viewModel: [Capsules.InitForm.ViewModel]) {
-        capsules = viewModel
-        tableView.reloadData()
+        view().capsules = viewModel
     }
 
     // MARK: - Private
 
     private func initForm() {
         interactor.getCapsulesData(Capsules.InitForm.Request())
-    }
-}
-
-// move table view to content view
-extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return capsules.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = capsules[indexPath.row].capsuleSerial
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router.moveToCapsule(data: capsules[indexPath.row])
     }
 }
