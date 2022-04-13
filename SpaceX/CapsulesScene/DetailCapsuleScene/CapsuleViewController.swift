@@ -9,6 +9,7 @@
 import UIKit
 
 final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
+    //ui to content view
     private lazy var stack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -99,6 +100,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
     private func setUpUI() {
         view.backgroundColor = .systemBackground
 
+        //view.addSubview(ContentView)
         view.addSubview(stack)
         stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
         stack.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -111,6 +113,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
         stack.addArrangedSubview(detailsLabel)
         stack.addArrangedSubview(reuseCountLabel)
 
+        //pass the data to public content view field (model)
         serialTextField.text?.append(data?.capsuleSerial ?? "")
         capsuleIDLabel.text?.append(data?.capsuleID.rawValue ?? "")
         statusLabel.text?.append(data?.status.rawValue ?? "")

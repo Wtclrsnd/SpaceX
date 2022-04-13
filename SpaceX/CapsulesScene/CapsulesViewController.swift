@@ -15,7 +15,7 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
         return tableView
     }()
 
-    private var capsules: [Capsules.InitForm.Response] = []
+    private var capsules: [Capsules.InitForm.Response] = [] //viewModel
 
     private let interactor: CapsulesBusinessLogic
     private let router: CapsulesRoutingLogic
@@ -50,9 +50,7 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
 
     func displayInitForm(_ data: [Capsules.InitForm.Response]) {
         capsules = data
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
 
     // MARK: - Private
@@ -62,6 +60,7 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
     }
 }
 
+//move table view to content view
 extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return capsules.count

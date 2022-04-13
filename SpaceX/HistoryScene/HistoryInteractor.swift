@@ -26,19 +26,17 @@ final class HistoryInteractor: HistoryBusinessLogic, HistoryDataStore {
         let urlString = "https://api.spacexdata.com/v3/history"
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url)
-        DispatchQueue.main.async {
-            self.worker.getEvents(request: request, completion: { eventsData in
-                for event in eventsData {
-                    self.events.append(
-                        History.InitForm.Response(
-                            title: event.title,
-                            eventDateUTC: event.eventDateUTC,
-                            details: event.details
-                        )
+        self.worker.getEvents(request: request, completion: { eventsData in
+            for event in eventsData {
+                self.events.append(
+                    History.InitForm.Response(
+                        title: event.title,
+                        eventDateUTC: event.eventDateUTC,
+                        details: event.details
                     )
-                }
-                self.presenter.presentInitForm(self.events)
-            })
-        }
+                )
+            }
+            self.presenter.presentInitForm(self.events)
+        })
     }
 }

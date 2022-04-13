@@ -37,7 +37,6 @@ final class HistoryViewController: UIViewController, HistoryDisplayLogic {
         setUpUI()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
     }
 
     private func setUpUI() {
@@ -52,9 +51,7 @@ final class HistoryViewController: UIViewController, HistoryDisplayLogic {
 
     func displayInitForm(_ data: [History.InitForm.Response]) {
         events = data
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
 
     // MARK: - Private

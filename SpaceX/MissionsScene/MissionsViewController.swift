@@ -52,9 +52,7 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
 
     func displayInitForm(_ data: [Missions.InitForm.Response]) {
         missions = data
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        tableView.reloadData()
     }
 
     // MARK: - Private

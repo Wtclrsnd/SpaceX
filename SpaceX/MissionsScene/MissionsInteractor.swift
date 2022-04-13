@@ -26,19 +26,17 @@ final class MissionsInteractor: MissionsBusinessLogic, MissionsDataStore {
         let urlString = "https://api.spacexdata.com/v3/missions"
         guard let url = URL(string: urlString) else { return }
         let request = URLRequest(url: url)
-        DispatchQueue.main.async {
-            self.worker.getMissions(request: request, completion: { missionsData in
-                for mission in missionsData {
-                    self.missions.append(
-                        Missions.InitForm.Response(
-                            missionName: mission.missionName,
-                            missionID: mission.missionID,
-                            missionDescription: mission.missionDescription
-                        )
+        self.worker.getMissions(request: request, completion: { missionsData in
+            for mission in missionsData {
+                self.missions.append(
+                    Missions.InitForm.Response(
+                        missionName: mission.missionName,
+                        missionID: mission.missionID,
+                        missionDescription: mission.missionDescription
                     )
-                }
-                self.presenter.presentInitForm(self.missions)
-            })
-        }
+                )
+            }
+            self.presenter.presentInitForm(self.missions)
+        })
     }
 }

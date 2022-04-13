@@ -19,7 +19,7 @@ enum Capsules {
             let details: String?
             let reuseCount: Int
         }
-        struct ViewModel {}
+        struct ViewModel {} //like request 
     }
 
     // MARK: - Capsule

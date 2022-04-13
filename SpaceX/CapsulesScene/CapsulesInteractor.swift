@@ -25,25 +25,25 @@ final class CapsulesInteractor: CapsulesBusinessLogic, CapsulesDataStore {
     func getCapsulesData(_ request: Capsules.InitForm.Request) {
         let urlString = "https://api.spacexdata.com/v3/capsules"
         guard let url = URL(string: urlString) else { return }
-        let request = URLRequest(url: url)
-        DispatchQueue.main.async {
-            self.worker.getData(request: request, completion: { capsules in
-                for singleCap in capsules {
-                    self.capsulesResponse.append(
-                        Capsules.InitForm.Response(
-                            capsuleSerial: singleCap.capsuleSerial,
-                            capsuleID: singleCap.capsuleID,
-                            status: singleCap.status,
-                            originalLaunch: singleCap.originalLaunch,
-                            originalLaunchUnix: singleCap.originalLaunchUnix,
-                            landings: singleCap.landings,
-                            details: singleCap.details,
-                            reuseCount: singleCap.reuseCount
-                        )
+        let request = URLRequest(url: url) //to worker
+        self.worker.getData(request: request, completion: { capsules in
+            for singleCap in capsules {
+                self.capsulesResponse.append(
+                    Capsules.InitForm.Response(
+                        capsuleSerial: singleCap.capsuleSerial,
+                        capsuleID: singleCap.capsuleID,
+                        status: singleCap.status,
+                        originalLaunch: singleCap.originalLaunch,
+                        originalLaunchUnix: singleCap.originalLaunchUnix,
+                        landings: singleCap.landings,
+                        details: singleCap.details,
+                        reuseCount: singleCap.reuseCount
                     )
-                }
+                )
+            }
+            DispatchQueue.main.async {
                 self.presenter.presentInitForm(self.capsulesResponse)
-            })
-        }
+            }
+        })
     }
 }

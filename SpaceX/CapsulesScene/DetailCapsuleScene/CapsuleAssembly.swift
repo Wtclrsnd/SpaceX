@@ -12,14 +12,14 @@ enum CapsuleAssembly {
     static func build(data: Capsules.InitForm.Response) -> UIViewController {
         let presenter = CapsulePresenter()
         let worker = CapsuleWorker()
-        let interactor = CapsuleInteractor(presenter: presenter, worker: worker)
+        let interactor = CapsuleInteractor(presenter: presenter, worker: worker) //a data field
         let router = CapsuleRouter(dataStore: interactor)
         let viewController = CapsuleViewController(interactor: interactor, router: router)
 
         presenter.view = viewController
         router.viewController = viewController
 
-        viewController.data = data
+        viewController.data = data //to interactor data field
 
         return viewController
     }
