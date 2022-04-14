@@ -10,16 +10,13 @@ import UIKit
 
 final class MissionInteractor: MissionBusinessLogic, MissionDataStore {
     private let presenter: MissionPresentationLogic
-    private let worker: MissionWorkerLogic
 
     var missionRaw: Missions.InitForm.ViewModel?
 
     init(
-        presenter: MissionPresentationLogic,
-        worker: MissionWorkerLogic
+        presenter: MissionPresentationLogic
     ) {
         self.presenter = presenter
-        self.worker = worker
     }
 
     func requestInitForm(_ request: Mission.InitForm.Request) {

@@ -10,11 +10,9 @@ import UIKit
 
 final class MissionViewController: UIViewController, MissionDisplayLogic {
     private let interactor: MissionBusinessLogic
-    private let router: MissionRoutingLogic
 
-    init(interactor: MissionBusinessLogic, router: MissionRoutingLogic) {
+    init(interactor: MissionBusinessLogic) {
         self.interactor = interactor
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
 

@@ -16,8 +16,6 @@ protocol MissionBusinessLogic {
     func requestInitForm(_ request: Mission.InitForm.Request)
 }
 
-protocol MissionWorkerLogic {}
-
 protocol MissionPresentationLogic {
     func presentInitForm(_ response: Mission.InitForm.Response)
 }
@@ -25,5 +23,3 @@ protocol MissionPresentationLogic {
 protocol MissionDisplayLogic: AnyObject {
     func displayInitForm(_ viewModel: Mission.InitForm.ViewModel)
 }
-
-protocol MissionRoutingLogic {}

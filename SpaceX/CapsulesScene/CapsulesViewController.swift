@@ -65,7 +65,7 @@ extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: "myCell",
             for: indexPath
         ) as? CapsulesTableViewCell else { return UITableViewCell() }
-        
+
         cell.capsuleSerial.text = capsules[indexPath.row].capsuleSerial
         cell.capsuleDetails.text = capsules[indexPath.row].details
 
