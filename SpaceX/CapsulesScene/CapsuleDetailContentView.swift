@@ -73,6 +73,15 @@ final class CapsuleDetailContentView: UIView {
         return label
     }()
 
+    private lazy var timeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        label.text = "time: "
+        label.font = .systemFont(ofSize: 28)
+        return label
+    }()
+
     var model: Capsule.InitForm.ViewModel? {
         didSet {
             serialTextField.text?.append(model?.capsuleSerial ?? "")
@@ -81,6 +90,13 @@ final class CapsuleDetailContentView: UIView {
             landingsLabel.text?.append(String(model?.landings ?? 0))
             detailsLabel.text?.append(model?.details ?? "")
             reuseCountLabel.text?.append(String(model?.reuseCount ?? 0))
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "ru_RU")
+            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            let string = model?.originalLaunch ?? "0"
+            let date = dateFormatter.date(from: string)
+            timeLabel.text?.append(dateFormatter.string(from: date ?? Date()))
         }
     }
 
@@ -112,5 +128,6 @@ final class CapsuleDetailContentView: UIView {
         stack.addArrangedSubview(landingsLabel)
         stack.addArrangedSubview(detailsLabel)
         stack.addArrangedSubview(reuseCountLabel)
+        stack.addArrangedSubview(timeLabel)
     }
 }
