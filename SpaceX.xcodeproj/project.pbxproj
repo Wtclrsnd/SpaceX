@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7277731E28080C9E0057B37E /* CapsulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277731D28080C9E0057B37E /* CapsulesTableViewCell.swift */; };
 		7282997A27FDBFD600223FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282997927FDBFD600223FDA /* AppDelegate.swift */; };
 		7282997C27FDBFD600223FDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282997B27FDBFD600223FDA /* SceneDelegate.swift */; };
 		7282998127FDBFD600223FDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7282997F27FDBFD600223FDA /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7277731D28080C9E0057B37E /* CapsulesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesTableViewCell.swift; sourceTree = "<group>"; };
 		7282997627FDBFD600223FDA /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7282997927FDBFD600223FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7282997B27FDBFD600223FDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				728299B627FDCB2E00223FDA /* CapsulesModels.swift */,
 				728299B727FDCB2E00223FDA /* CapsulesViewController.swift */,
 				72C812952806FD5300276803 /* CapsulesContentView.swift */,
+				7277731D28080C9E0057B37E /* CapsulesTableViewCell.swift */,
 				728299B827FDCB2E00223FDA /* CapsulesProtocols.swift */,
 				728299B927FDCB2E00223FDA /* CapsulesAssembly.swift */,
 				728299BA27FDCB2E00223FDA /* CapsulesInteractor.swift */,
@@ -419,6 +422,7 @@
 				728299DF27FDCD5A00223FDA /* MissionModels.swift in Sources */,
 				72829A0327FDCDE500223FDA /* EventProtocols.swift in Sources */,
 				728299A127FDCA7D00223FDA /* HistoryInteractor.swift in Sources */,
+				7277731E28080C9E0057B37E /* CapsulesTableViewCell.swift in Sources */,
 				728299DD27FDCD5A00223FDA /* MissionWorker.swift in Sources */,
 				728299F327FDCD9500223FDA /* CapsuleAssembly.swift in Sources */,
 				728299F027FDCD9500223FDA /* CapsuleModels.swift in Sources */,

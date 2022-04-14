@@ -10,7 +10,9 @@ import UIKit
 final class CapsulesContentView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.backgroundColor = .clear
+        tableView.separatorColor = .clear
+        tableView.register(CapsulesTableViewCell.self, forCellReuseIdentifier: "myCell")
         return tableView
     }()
 
