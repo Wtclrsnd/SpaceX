@@ -70,6 +70,7 @@
 		72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812952806FD5300276803 /* CapsulesContentView.swift */; };
 		72C812982807113100276803 /* CapsuleDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812972807113100276803 /* CapsuleDetailContentView.swift */; };
 		72DCE12A28083CCF00C9AA86 /* MissionsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCE12928083CCF00C9AA86 /* MissionsContentView.swift */; };
+		72DCE12C2808673A00C9AA86 /* MissionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCE12B2808673A00C9AA86 /* MissionContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +139,7 @@
 		72C812952806FD5300276803 /* CapsulesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesContentView.swift; sourceTree = "<group>"; };
 		72C812972807113100276803 /* CapsuleDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapsuleDetailContentView.swift; path = SpaceX/CapsulesScene/CapsuleDetailContentView.swift; sourceTree = SOURCE_ROOT; };
 		72DCE12928083CCF00C9AA86 /* MissionsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsContentView.swift; sourceTree = "<group>"; };
+		72DCE12B2808673A00C9AA86 /* MissionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				728299D627FDCD5A00223FDA /* MissionRouter.swift */,
 				728299D727FDCD5A00223FDA /* MissionModels.swift */,
 				728299D827FDCD5A00223FDA /* MissionViewController.swift */,
+				72DCE12B2808673A00C9AA86 /* MissionContentView.swift */,
 				728299D927FDCD5A00223FDA /* MissionProtocols.swift */,
 				728299DA27FDCD5A00223FDA /* MissionAssembly.swift */,
 				728299DB27FDCD5A00223FDA /* MissionInteractor.swift */,
@@ -435,6 +438,7 @@
 				728299BF27FDCB2E00223FDA /* CapsulesViewController.swift in Sources */,
 				72DCE12A28083CCF00C9AA86 /* MissionsContentView.swift in Sources */,
 				728299CD27FDCB5E00223FDA /* MenuRouter.swift in Sources */,
+				72DCE12C2808673A00C9AA86 /* MissionContentView.swift in Sources */,
 				72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */,
 				728299C227FDCB2E00223FDA /* CapsulesInteractor.swift in Sources */,
 				728299D227FDCB5E00223FDA /* MenuInteractor.swift in Sources */,
