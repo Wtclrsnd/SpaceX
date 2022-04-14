@@ -27,9 +27,9 @@ protocol HistoryPresentationLogic {
 }
 
 protocol HistoryDisplayLogic: AnyObject {
-    func displayInitForm(_ data: [History.InitForm.Response])
+    func displayInitForm(_ viewModel: [History.InitForm.ViewModel])
 }
 
 protocol HistoryRoutingLogic {
-    func moveToEvent(data: History.InitForm.Response)
+    func moveToEvent(data: History.InitForm.ViewModel)
 }

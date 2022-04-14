@@ -12,6 +12,8 @@ final class EventInteractor: EventBusinessLogic, EventDataStore {
     private let presenter: EventPresentationLogic
     private let worker: EventWorkerLogic
 
+    var eventRaw: History.InitForm.ViewModel?
+
     init(
         presenter: EventPresentationLogic,
         worker: EventWorkerLogic
@@ -21,8 +23,13 @@ final class EventInteractor: EventBusinessLogic, EventDataStore {
     }
 
     func requestInitForm(_ request: Event.InitForm.Request) {
+        let event = Event.InitForm.Response(
+            title: eventRaw?.title ?? "",
+            eventDateUTC: eventRaw?.eventDateUTC ?? "",
+            details: eventRaw?.details ?? ""
+        )
         DispatchQueue.main.async {
-            self.presenter.presentInitForm(Event.InitForm.Response())
+            self.presenter.presentInitForm(event)
         }
     }
 }

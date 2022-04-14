@@ -10,6 +10,11 @@ final class EventPresenter: EventPresentationLogic {
     weak var view: EventDisplayLogic?
 
     func presentInitForm(_ response: Event.InitForm.Response) {
-        view?.displayInitForm(Event.InitForm.ViewModel())
+        let event = Event.InitForm.ViewModel(
+            title: response.title,
+            eventDateUTC: response.eventDateUTC,
+            details: response.details
+        )
+        view?.displayInitForm(event)
     }
 }

@@ -69,6 +69,8 @@
 		72C812982807113100276803 /* CapsuleDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812972807113100276803 /* CapsuleDetailContentView.swift */; };
 		72DCE12A28083CCF00C9AA86 /* MissionsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCE12928083CCF00C9AA86 /* MissionsContentView.swift */; };
 		72DCE12C2808673A00C9AA86 /* MissionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCE12B2808673A00C9AA86 /* MissionContentView.swift */; };
+		72DCE12E2808749600C9AA86 /* HistoryContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCE12D2808749600C9AA86 /* HistoryContentView.swift */; };
+		72DCE1302808860A00C9AA86 /* EventContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DCE12F2808860A00C9AA86 /* EventContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +138,8 @@
 		72C812972807113100276803 /* CapsuleDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapsuleDetailContentView.swift; path = SpaceX/CapsulesScene/CapsuleDetailContentView.swift; sourceTree = SOURCE_ROOT; };
 		72DCE12928083CCF00C9AA86 /* MissionsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionsContentView.swift; sourceTree = "<group>"; };
 		72DCE12B2808673A00C9AA86 /* MissionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionContentView.swift; sourceTree = "<group>"; };
+		72DCE12D2808749600C9AA86 /* HistoryContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentView.swift; sourceTree = "<group>"; };
+		72DCE12F2808860A00C9AA86 /* EventContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,7 @@
 				7282999427FDCA7C00223FDA /* HistoryRouter.swift */,
 				7282999527FDCA7C00223FDA /* HistoryModels.swift */,
 				7282999627FDCA7C00223FDA /* HistoryViewController.swift */,
+				72DCE12D2808749600C9AA86 /* HistoryContentView.swift */,
 				7282999727FDCA7C00223FDA /* HistoryProtocols.swift */,
 				7282999827FDCA7C00223FDA /* HistoryAssembly.swift */,
 				7282999927FDCA7C00223FDA /* HistoryInteractor.swift */,
@@ -292,6 +297,7 @@
 				728299F827FDCDE500223FDA /* EventRouter.swift */,
 				728299F927FDCDE500223FDA /* EventModels.swift */,
 				728299FA27FDCDE500223FDA /* EventViewController.swift */,
+				72DCE12F2808860A00C9AA86 /* EventContentView.swift */,
 				728299FB27FDCDE500223FDA /* EventProtocols.swift */,
 				728299FC27FDCDE500223FDA /* EventAssembly.swift */,
 				728299FD27FDCDE500223FDA /* EventInteractor.swift */,
@@ -413,6 +419,7 @@
 				728299CC27FDCB5E00223FDA /* MenuWorker.swift in Sources */,
 				728299BD27FDCB2E00223FDA /* CapsulesRouter.swift in Sources */,
 				728299C027FDCB2E00223FDA /* CapsulesProtocols.swift in Sources */,
+				72DCE1302808860A00C9AA86 /* EventContentView.swift in Sources */,
 				7282997C27FDBFD600223FDA /* SceneDelegate.swift in Sources */,
 				728299F127FDCD9500223FDA /* CapsuleViewController.swift in Sources */,
 				728299ED27FDCD9500223FDA /* CapsulePresenter.swift in Sources */,
@@ -434,6 +441,7 @@
 				72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */,
 				728299C227FDCB2E00223FDA /* CapsulesInteractor.swift in Sources */,
 				728299D227FDCB5E00223FDA /* MenuInteractor.swift in Sources */,
+				72DCE12E2808749600C9AA86 /* HistoryContentView.swift in Sources */,
 				7282999E27FDCA7D00223FDA /* HistoryViewController.swift in Sources */,
 				728299E127FDCD5A00223FDA /* MissionProtocols.swift in Sources */,
 				728299B227FDCB0300223FDA /* MissionsInteractor.swift in Sources */,

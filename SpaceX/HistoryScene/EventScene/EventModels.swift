@@ -9,7 +9,15 @@
 enum Event {
     enum InitForm {
         struct Request {}
-        struct Response {}
-        struct ViewModel {}
+        struct Response {
+            let title: String
+            let eventDateUTC: String
+            let details: String
+        }
+        struct ViewModel {
+            let title: String
+            let eventDateUTC: String
+            let details: String
+        }
     }
 }

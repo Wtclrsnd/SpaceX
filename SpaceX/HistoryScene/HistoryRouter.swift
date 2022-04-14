@@ -16,7 +16,7 @@ final class HistoryRouter: HistoryRoutingLogic, HistoryDataPassing {
         self.dataStore = dataStore
     }
 
-    func moveToEvent(data: History.InitForm.Response) {
+    func moveToEvent(data: History.InitForm.ViewModel) {
         let detailVC = EventAssembly.build(data: data)
         viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }

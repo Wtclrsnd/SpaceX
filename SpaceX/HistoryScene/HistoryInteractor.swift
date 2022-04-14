@@ -36,7 +36,9 @@ final class HistoryInteractor: HistoryBusinessLogic, HistoryDataStore {
                     )
                 )
             }
-            self.presenter.presentInitForm(self.events)
+            DispatchQueue.main.async {
+                self.presenter.presentInitForm(self.events)
+            }
         })
     }
 }

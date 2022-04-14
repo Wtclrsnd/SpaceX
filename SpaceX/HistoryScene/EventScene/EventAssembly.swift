@@ -9,7 +9,7 @@
 import UIKit
 
 enum EventAssembly {
-    static func build(data: History.InitForm.Response) -> UIViewController {
+    static func build(data: History.InitForm.ViewModel) -> UIViewController {
         let presenter = EventPresenter()
         let worker = EventWorker()
         let interactor = EventInteractor(presenter: presenter, worker: worker)
@@ -19,7 +19,7 @@ enum EventAssembly {
         presenter.view = viewController
         router.viewController = viewController
 
-        viewController.event = data
+        interactor.eventRaw = data
 
         return viewController
     }
