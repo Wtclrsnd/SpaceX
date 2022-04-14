@@ -27,9 +27,9 @@ protocol MissionsPresentationLogic {
 }
 
 protocol MissionsDisplayLogic: AnyObject {
-    func displayInitForm(_ data: [Missions.InitForm.Response])
+    func displayInitForm(_ viewModel: [Missions.InitForm.ViewModel])
 }
 
 protocol MissionsRoutingLogic {
-    func moveToMission(data: Missions.InitForm.Response)
+    func moveToMission(data: Missions.InitForm.ViewModel)
 }

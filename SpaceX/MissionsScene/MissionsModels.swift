@@ -14,7 +14,11 @@ enum Missions {
             let missionID: String
             let missionDescription: String
         }
-        struct ViewModel {}
+        struct ViewModel {
+            let missionName: String
+            let missionID: String
+            let missionDescription: String
+        }
     }
 }
 

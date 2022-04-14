@@ -9,7 +9,15 @@
 enum Mission {
     enum InitForm {
         struct Request {}
-        struct Response {}
-        struct ViewModel {}
+        struct Response {
+            let missionName: String
+            let missionID: String
+            let missionDescription: String
+        }
+        struct ViewModel {
+            let missionName: String
+            let missionID: String
+            let missionDescription: String
+        }
     }
 }

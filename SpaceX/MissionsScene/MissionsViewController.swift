@@ -15,7 +15,7 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
         return tableView
     }()
 
-    private var missions: [Missions.InitForm.Response] = []
+    private var missions: [Missions.InitForm.ViewModel] = []
 
     private let interactor: MissionsBusinessLogic
     private let router: MissionsRoutingLogic
@@ -50,8 +50,8 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
 
     // MARK: - MissionsDisplayLogic
 
-    func displayInitForm(_ data: [Missions.InitForm.Response]) {
-        missions = data
+    func displayInitForm(_ viewModel: [Missions.InitForm.ViewModel]) {
+        missions = viewModel
         tableView.reloadData()
     }
 

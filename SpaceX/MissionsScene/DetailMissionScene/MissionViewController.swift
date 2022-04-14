@@ -21,7 +21,11 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
         return label
     }()
 
-    var mission: Missions.InitForm.Response?
+    var mission: Mission.InitForm.ViewModel? {
+        didSet {
+            descriptionLabel.text = mission?.missionDescription ?? ""
+        }
+    }
 
     private let interactor: MissionBusinessLogic
     private let router: MissionRoutingLogic
@@ -49,7 +53,6 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
         scrollView.backgroundColor = .systemBackground
 
         scrollView.addSubview(descriptionLabel)
-        descriptionLabel.text = mission?.missionDescription ?? ""
 
         descriptionLabel.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15).isActive = true
@@ -76,7 +79,9 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
     // MARK: - MissionDisplayLogic
 
-    func displayInitForm(_ viewModel: Mission.InitForm.ViewModel) {}
+    func displayInitForm(_ viewModel: Mission.InitForm.ViewModel) {
+        mission = viewModel
+    }
 
     // MARK: - Private
 
