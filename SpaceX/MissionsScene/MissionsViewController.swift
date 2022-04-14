@@ -9,12 +9,6 @@
 import UIKit
 
 final class MissionsViewController: UIViewController, MissionsDisplayLogic {
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
-
     private var missions: [Missions.InitForm.ViewModel] = []
 
     private let interactor: MissionsBusinessLogic
@@ -31,28 +25,28 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func view() -> MissionsContentView {
+        guard let view = self.view as? MissionsContentView else { return MissionsContentView() }
+        return view
+    }
+
+    override func loadView() {
+        self.view = MissionsContentView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
-        setUpUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.reloadData()
-    }
-
-    private func setUpUI() {
-        view.backgroundColor = .systemBackground
         title = "SpaceX Missions"
-
-        view.addSubview(tableView)
-        tableView.frame = view.bounds
+        view().tableView.delegate = self
+        view().tableView.dataSource = self
     }
 
     // MARK: - MissionsDisplayLogic
 
     func displayInitForm(_ viewModel: [Missions.InitForm.ViewModel]) {
         missions = viewModel
-        tableView.reloadData()
+        view().tableView.reloadData()
     }
 
     // MARK: - Private

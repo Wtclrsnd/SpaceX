@@ -36,7 +36,9 @@ final class MissionsInteractor: MissionsBusinessLogic, MissionsDataStore {
                     )
                 )
             }
-            self.presenter.presentInitForm(self.missions)
+            DispatchQueue.main.async {
+                self.presenter.presentInitForm(self.missions)
+            }
         })
     }
 }
