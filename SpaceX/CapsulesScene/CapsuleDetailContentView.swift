@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CapsuleDetailContentView: UIView {
+final class CapsuleDetailContentView: UIView {
     private lazy var stack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +73,16 @@ class CapsuleDetailContentView: UIView {
         return label
     }()
 
-    public var model: Capsule.InitForm.ViewModel?
+    var model: Capsule.InitForm.ViewModel? {
+        didSet {
+            serialTextField.text?.append(model?.capsuleSerial ?? "")
+            capsuleIDLabel.text?.append(model?.capsuleID.rawValue ?? "")
+            statusLabel.text?.append(model?.status.rawValue ?? "")
+            landingsLabel.text?.append(String(model?.landings ?? 0))
+            detailsLabel.text?.append(model?.details ?? "")
+            reuseCountLabel.text?.append(String(model?.reuseCount ?? 0))
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -103,12 +112,5 @@ class CapsuleDetailContentView: UIView {
         stack.addArrangedSubview(landingsLabel)
         stack.addArrangedSubview(detailsLabel)
         stack.addArrangedSubview(reuseCountLabel)
-
-        serialTextField.text?.append(model?.capsuleSerial ?? "")
-        capsuleIDLabel.text?.append(model?.capsuleID.rawValue ?? "")
-        statusLabel.text?.append(model?.status.rawValue ?? "")
-        landingsLabel.text?.append(String(model?.landings ?? 0))
-        detailsLabel.text?.append(model?.details ?? "")
-        reuseCountLabel.text?.append(String(model?.reuseCount ?? 0))
     }
 }
