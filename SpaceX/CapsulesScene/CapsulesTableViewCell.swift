@@ -18,7 +18,7 @@ class CapsulesTableViewCell: UITableViewCell {
 
     let capsuleSerial: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 22)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .left
         label.text = "1"
         label.textColor = .black
@@ -27,7 +27,7 @@ class CapsulesTableViewCell: UITableViewCell {
 
     let capsuleDetails: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 10)
         label.textAlignment = .left
         label.text = "1"
         label.textColor = .lightGray
@@ -36,7 +36,7 @@ class CapsulesTableViewCell: UITableViewCell {
 
     let capsuleDate: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.boldSystemFont(ofSize: 10)
         label.textAlignment = .left
         label.text = "1"
         label.textColor = .black
@@ -47,7 +47,7 @@ class CapsulesTableViewCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 20).isActive = true
         return view
     }()
 
@@ -59,10 +59,14 @@ class CapsulesTableViewCell: UITableViewCell {
         itemStack.addArrangedSubview(seperator)
         itemStack.addArrangedSubview(capsuleDate)
 
-        itemStack.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        itemStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         itemStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         itemStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
         itemStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+
+        capsuleSerial.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        capsuleDetails.heightAnchor.constraint(equalToConstant: 14).isActive = true
+        capsuleDate.heightAnchor.constraint(equalToConstant: 10).isActive = true
     }
 
     required init?(coder: NSCoder) {

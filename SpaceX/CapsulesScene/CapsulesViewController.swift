@@ -70,7 +70,7 @@ extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
 //        cell.capsuleDate.text = capsules[indexPath.row].originalLaunch
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "ru_RU")
-        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
 
         let string = capsules[indexPath.row].originalLaunch ?? "0"
