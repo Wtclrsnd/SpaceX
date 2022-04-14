@@ -62,7 +62,7 @@ class CapsulesTableViewCell: UITableViewCell {
         itemStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         itemStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10).isActive = true
         itemStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10).isActive = true
-        itemStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        itemStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15).isActive = true
 
         capsuleSerial.heightAnchor.constraint(equalToConstant: 18).isActive = true
         capsuleDetails.heightAnchor.constraint(equalToConstant: 14).isActive = true
