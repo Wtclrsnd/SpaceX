@@ -61,8 +61,22 @@ extension CapsulesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = capsules[indexPath.row].capsuleSerial
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "myCell",
+            for: indexPath
+        ) as? CapsulesTableViewCell else { return UITableViewCell() }
+
+        cell.capsuleSerial.text = capsules[indexPath.row].capsuleSerial
+        cell.capsuleDetails.text = capsules[indexPath.row].details
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let string = capsules[indexPath.row].originalLaunch ?? "0"
+        let date = dateFormatter.date(from: string)
+        cell.capsuleDate.text = dateFormatter.string(from: date ?? Date())
+
         return cell
     }
 

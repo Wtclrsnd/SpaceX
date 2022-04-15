@@ -14,7 +14,11 @@ enum History {
             let eventDateUTC: String
             let details: String
         }
-        struct ViewModel {}
+        struct ViewModel {
+            let title: String
+            let eventDateUTC: String
+            let details: String
+        }
     }
 }
 

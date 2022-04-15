@@ -9,9 +9,8 @@
 final class CapsulesPresenter: CapsulesPresentationLogic {
     weak var view: CapsulesDisplayLogic?
 
-    var capsules: [Capsules.InitForm.ViewModel] = []
-
     func presentInitForm(_ response: [Capsules.InitForm.Response]) {
+        var capsules: [Capsules.InitForm.ViewModel] = []
         for caps in response {
             let model = Capsules.InitForm.ViewModel(
                 capsuleSerial: caps.capsuleSerial,

@@ -9,13 +9,7 @@
 import UIKit
 
 final class HistoryViewController: UIViewController, HistoryDisplayLogic {
-    private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return tableView
-    }()
-
-    private var events: [History.InitForm.Response] = []
+    private var events: [History.InitForm.ViewModel] = []
 
     private let interactor: HistoryBusinessLogic
     private let router: HistoryRoutingLogic
@@ -31,27 +25,29 @@ final class HistoryViewController: UIViewController, HistoryDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func view() -> HistoryContentView {
+        guard let view = self.view as? HistoryContentView else { return HistoryContentView() }
+        return view
+    }
+
+    override func loadView() {
+        self.view = HistoryContentView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
-        setUpUI()
-        tableView.delegate = self
-        tableView.dataSource = self
-    }
-
-    private func setUpUI() {
-        view.backgroundColor = .systemBackground
         title = "SpaceX History"
 
-        view.addSubview(tableView)
-        tableView.frame = view.bounds
+        view().tableView.delegate = self
+        view().tableView.dataSource = self
     }
 
     // MARK: - HistoryDisplayLogic
 
-    func displayInitForm(_ data: [History.InitForm.Response]) {
-        events = data
-        tableView.reloadData()
+    func displayInitForm(_ viewModel: [History.InitForm.ViewModel]) {
+        events = viewModel
+        view().tableView.reloadData()
     }
 
     // MARK: - Private

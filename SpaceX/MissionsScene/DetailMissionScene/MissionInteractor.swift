@@ -10,19 +10,23 @@ import UIKit
 
 final class MissionInteractor: MissionBusinessLogic, MissionDataStore {
     private let presenter: MissionPresentationLogic
-    private let worker: MissionWorkerLogic
+
+    var missionRaw: Missions.InitForm.ViewModel?
 
     init(
-        presenter: MissionPresentationLogic,
-        worker: MissionWorkerLogic
+        presenter: MissionPresentationLogic
     ) {
         self.presenter = presenter
-        self.worker = worker
     }
 
     func requestInitForm(_ request: Mission.InitForm.Request) {
+        let mission = Mission.InitForm.Response(
+            missionName: missionRaw?.missionName ?? "",
+            missionID: missionRaw?.missionID ?? "",
+            missionDescription: missionRaw?.missionDescription ?? ""
+        )
         DispatchQueue.main.async {
-            self.presenter.presentInitForm(Mission.InitForm.Response())
+            self.presenter.presentInitForm(mission)
         }
     }
 }

@@ -10,6 +10,16 @@ final class MissionsPresenter: MissionsPresentationLogic {
     weak var view: MissionsDisplayLogic?
 
     func presentInitForm(_ response: [Missions.InitForm.Response]) {
-        view?.displayInitForm(response)
+        var missions: [Missions.InitForm.ViewModel] = []
+        for mission in response {
+            missions.append(
+                Missions.InitForm.ViewModel(
+                                missionName: mission.missionName,
+                                missionID: mission.missionID,
+                                missionDescription: mission.missionDescription
+                            )
+            )
+        }
+        view?.displayInitForm(missions)
     }
 }

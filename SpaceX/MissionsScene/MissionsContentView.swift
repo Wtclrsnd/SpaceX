@@ -1,18 +1,16 @@
 //
-//  CapsulesContentView.swift
+//  MissionsContentView.swift
 //  SpaceX
 //
-//  Created by Emil Shpeklord on 13.04.2022.
+//  Created by Emil Shpeklord on 14.04.2022.
 //
 
 import UIKit
 
-final class CapsulesContentView: UIView {
+class MissionsContentView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
-        tableView.separatorColor = .clear
-        tableView.register(CapsulesTableViewCell.self, forCellReuseIdentifier: "myCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
 
