@@ -38,15 +38,6 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
         initForm()
         title = "SpaceX Capsules"
 
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .lightText
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.lightText]
-//        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.lightText]
-
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.compactAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
-
         view().tableView.delegate = self
         view().tableView.dataSource = self
     }

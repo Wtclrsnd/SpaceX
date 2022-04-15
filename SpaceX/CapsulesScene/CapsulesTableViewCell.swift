@@ -10,13 +10,9 @@ import UIKit
 class CapsulesTableViewCell: UITableViewCell {
     let cardView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightText
+        view.backgroundColor = .systemBackground
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 10
-//        view.layer.shadowOpacity = 0.5
-//        view.layer.shadowRadius = 2
-//        view.layer.shadowColor = UIColor(named: "Light Gray")?.cgColor
-//        view.layer.shadowOffset = CGSize(width: 3, height: 3)
+        view.layer.cornerRadius = 14
         return view
     }()
 
@@ -65,8 +61,8 @@ class CapsulesTableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.backgroundColor = .lightText
-        self.backgroundColor = .lightText
+        contentView.backgroundColor = UIColor(named: "capsuleBackground")
+        self.backgroundColor = UIColor(named: "capsuleBackground")
         contentView.addSubview(cardView)
         cardView.addSubview(itemStack)
         itemStack.addArrangedSubview(capsuleSerial)
@@ -79,10 +75,10 @@ class CapsulesTableViewCell: UITableViewCell {
         cardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
         cardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
 
-        itemStack.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 5).isActive = true
-        itemStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -5).isActive = true
-        itemStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 5).isActive = true
-        itemStack.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -5).isActive = true
+        itemStack.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16).isActive = true
+        itemStack.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16).isActive = true
+        itemStack.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16).isActive = true
+        itemStack.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16).isActive = true
 
         capsuleSerial.heightAnchor.constraint(equalToConstant: 18).isActive = true
         capsuleDetails.heightAnchor.constraint(equalToConstant: 14).isActive = true
