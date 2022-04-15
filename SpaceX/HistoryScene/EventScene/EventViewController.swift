@@ -23,7 +23,7 @@ final class EventViewController: UIViewController, EventDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func view() -> EventContentView {
+    private func view() -> EventContentView {
         guard let view = self.view as? EventContentView else { return EventContentView() }
         return view
     }

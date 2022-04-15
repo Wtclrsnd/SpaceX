@@ -25,7 +25,7 @@ final class MissionsViewController: UIViewController, MissionsDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func view() -> MissionsContentView {
+    private func view() -> MissionsContentView {
         guard let view = self.view as? MissionsContentView else { return MissionsContentView() }
         return view
     }

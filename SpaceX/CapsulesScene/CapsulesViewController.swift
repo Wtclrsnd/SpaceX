@@ -25,7 +25,7 @@ final class CapsulesViewController: UIViewController, CapsulesDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func view() -> CapsulesContentView {
+    private func view() -> CapsulesContentView {
         guard let view = self.view as? CapsulesContentView else { return CapsulesContentView() }
         return view
     }

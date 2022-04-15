@@ -21,9 +21,49 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func view() -> MissionContentView {
+    private func view() -> MissionContentView {
         guard let view = self.view as? MissionContentView else { return MissionContentView() }
         return view
+    }
+
+    private func addObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(adjustForKeyboard),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(adjustForKeyboard),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+    }
+
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewAndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            view().descriptionTextView.contentInset = .zero
+        } else {
+            view().descriptionTextView.contentInset = UIEdgeInsets(
+                top: 0,
+                left: 0,
+                bottom: keyboardViewAndFrame.height - view().safeAreaInsets.bottom,
+                right: 0
+            )
+        }
+
+        view().descriptionTextView.scrollIndicatorInsets = view().descriptionTextView.contentInset
+        let selectedRange = view().descriptionTextView.selectedRange
+        view().descriptionTextView.scrollRangeToVisible(selectedRange)
     }
 
     override func loadView() {
@@ -33,6 +73,7 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+        addObservers()
     }
 
     // MARK: - MissionDisplayLogic
@@ -46,5 +87,18 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
     private func initForm() {
         interactor.requestInitForm(Mission.InitForm.Request())
+
+        let rightItem = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.done,
+            target: self,
+            action: #selector(done)
+        )
+        self.navigationItem.rightBarButtonItem = rightItem
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = .systemPink
+    }
+
+    @objc private func done() {
+        view().endEditing(true)
     }
 }

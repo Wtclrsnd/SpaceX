@@ -25,7 +25,7 @@ final class HistoryViewController: UIViewController, HistoryDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func view() -> HistoryContentView {
+    private func view() -> HistoryContentView {
         guard let view = self.view as? HistoryContentView else { return HistoryContentView() }
         return view
     }
