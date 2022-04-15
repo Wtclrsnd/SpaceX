@@ -52,12 +52,6 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
             name: UIResponder.keyboardWillShowNotification,
             object: nil
         )
-        notificationCenter.addObserver(
-            self,
-            selector: #selector(removeButton),
-            name: UIResponder.keyboardWillHideNotification,
-            object: nil
-        )
     }
 
     @objc func adjustForKeyboard(notification: Notification) {
@@ -70,6 +64,7 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
         if notification.name == UIResponder.keyboardWillHideNotification {
             view().descriptionTextView.contentInset = .zero
+            navigationItem.rightBarButtonItem = nil
         } else {
             view().descriptionTextView.contentInset = UIEdgeInsets(
                 top: 0,
@@ -95,10 +90,6 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
         self.navigationController?.navigationBar.tintColor = .systemPink
     }
 
-    @objc func removeButton(notification: Notification) {
-        navigationItem.rightBarButtonItem = nil
-    }
-
     override func loadView() {
         self.view = MissionContentView()
     }
@@ -113,6 +104,7 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
     func displayInitForm(_ viewModel: Mission.InitForm.ViewModel) {
         title = viewModel.missionName
+        changedData = viewModel
         view().mission = viewModel
     }
 
@@ -133,6 +125,8 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
 extension MissionViewController: MissionViewToVCDelegate {
     func passData(viewModel: Mission.InitForm.ViewModel) {
-        changedData = viewModel
+        if changedData?.missionDescription != viewModel.missionDescription {
+            changedData = viewModel
+        }
     }
 }

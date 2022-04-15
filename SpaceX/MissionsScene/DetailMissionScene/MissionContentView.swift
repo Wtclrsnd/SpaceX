@@ -50,7 +50,7 @@ class MissionContentView: UIView {
         descriptionTextView.topAnchor.constraint(
             equalTo: self.safeAreaLayoutGuide.topAnchor
         ).isActive = true
-        descriptionTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
+        descriptionTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         descriptionTextView.widthAnchor.constraint(equalToConstant: self.frame.width - 30).isActive = true
     }
 }
