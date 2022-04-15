@@ -76,7 +76,8 @@ final class CapsuleDetailContentView: UIView {
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.heightAnchor.constraint(equalToConstant: 30).isActive = true
+//        label.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        label.numberOfLines = 0
         label.text = "time: "
         label.font = .systemFont(ofSize: 28)
         return label
@@ -92,7 +93,8 @@ final class CapsuleDetailContentView: UIView {
             reuseCountLabel.text?.append(String(model?.reuseCount ?? 0))
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "ru_RU")
-            dateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
+            dateFormatter.timeStyle = .full
+            dateFormatter.dateFormat = "dd MMMM y EEEE HH:mm"
             dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             let string = model?.originalLaunch ?? "0"
             let date = dateFormatter.date(from: string)

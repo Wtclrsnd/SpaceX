@@ -10,7 +10,7 @@ import UIKit
 final class CapsulesContentView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = UIColor(named: "capsuleBackground")
         tableView.separatorColor = .clear
         tableView.register(CapsulesTableViewCell.self, forCellReuseIdentifier: "myCell")
         return tableView
@@ -31,7 +31,7 @@ final class CapsulesContentView: UIView {
     }
 
     private func setUpUI() {
-        backgroundColor = .systemBackground
+        backgroundColor = .clear
 
         addSubview(tableView)
         tableView.frame = bounds
