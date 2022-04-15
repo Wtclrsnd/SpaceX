@@ -23,3 +23,7 @@ protocol MissionPresentationLogic {
 protocol MissionDisplayLogic: AnyObject {
     func displayInitForm(_ viewModel: Mission.InitForm.ViewModel)
 }
+
+protocol MissionViewToVCDelegate: AnyObject {
+    func passData(viewModel: Mission.InitForm.ViewModel)
+}

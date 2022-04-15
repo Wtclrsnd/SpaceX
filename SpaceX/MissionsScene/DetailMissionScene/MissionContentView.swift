@@ -8,6 +8,8 @@
 import UIKit
 
 class MissionContentView: UIView {
+    weak var delegate: MissionViewToVCDelegate?
+
     lazy var descriptionTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false

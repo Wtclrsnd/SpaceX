@@ -9,6 +9,12 @@
 import UIKit
 
 final class MissionViewController: UIViewController, MissionDisplayLogic {
+    var changedData: Mission.InitForm.ViewModel? {
+        didSet {
+            print("Data was changed!")
+        }
+    }
+
     private let interactor: MissionBusinessLogic
 
     init(interactor: MissionBusinessLogic) {
@@ -119,5 +125,14 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
     @objc private func done() {
         view().endEditing(true)
         view().mission?.missionDescription = view().descriptionTextView.text
+        view().delegate = self
+        guard let mission = view().mission else { return }
+        view().delegate?.passData(viewModel: mission)
+    }
+}
+
+extension MissionViewController: MissionViewToVCDelegate {
+    func passData(viewModel: Mission.InitForm.ViewModel) {
+        changedData = viewModel
     }
 }
