@@ -40,6 +40,18 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
             name: UIResponder.keyboardWillChangeFrameNotification,
             object: nil
         )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(addButton),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(removeButton),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 
     @objc func adjustForKeyboard(notification: Notification) {
@@ -66,6 +78,21 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
         view().descriptionTextView.scrollRangeToVisible(selectedRange)
     }
 
+    @objc func addButton(notification: Notification) {
+        let rightItem = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.done,
+            target: self,
+            action: #selector(done)
+        )
+        self.navigationItem.rightBarButtonItem = rightItem
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = .systemPink
+    }
+
+    @objc func removeButton(notification: Notification) {
+        navigationItem.rightBarButtonItem = nil
+    }
+
     override func loadView() {
         self.view = MissionContentView()
     }
@@ -87,18 +114,10 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
     private func initForm() {
         interactor.requestInitForm(Mission.InitForm.Request())
-
-        let rightItem = UIBarButtonItem(
-            barButtonSystemItem: UIBarButtonItem.SystemItem.done,
-            target: self,
-            action: #selector(done)
-        )
-        self.navigationItem.rightBarButtonItem = rightItem
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.tintColor = .systemPink
     }
 
     @objc private func done() {
         view().endEditing(true)
+        view().mission?.missionDescription = view().descriptionTextView.text
     }
 }

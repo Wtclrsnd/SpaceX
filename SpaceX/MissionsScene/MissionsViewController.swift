@@ -63,6 +63,7 @@ extension MissionsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.selectionStyle = .none
         cell.textLabel?.text = missions[indexPath.row].missionName
         return cell
     }
