@@ -9,9 +9,8 @@
 final class HistoryPresenter: HistoryPresentationLogic {
     weak var view: HistoryDisplayLogic?
 
-    var events: [History.InitForm.ViewModel] = []
-
     func presentInitForm(_ response: [History.InitForm.Response]) {
+        var events: [History.InitForm.ViewModel] = []
         for event in response {
             events.append(
                 History.InitForm.ViewModel(

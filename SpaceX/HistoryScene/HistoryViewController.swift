@@ -9,7 +9,7 @@
 import UIKit
 
 final class HistoryViewController: UIViewController, HistoryDisplayLogic {
-    var events: [History.InitForm.ViewModel] = []
+    private var events: [History.InitForm.ViewModel] = []
 
     private let interactor: HistoryBusinessLogic
     private let router: HistoryRoutingLogic
