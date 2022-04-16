@@ -9,11 +9,7 @@
 import UIKit
 
 final class MissionViewController: UIViewController, MissionDisplayLogic {
-    var changedData: Mission.InitForm.ViewModel? {
-        didSet {
-            print("Data was changed!")
-        }
-    }
+    var changedData: Mission.InitForm.ViewModel?
 
     private let interactor: MissionBusinessLogic
 
@@ -25,6 +21,13 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillHideNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillChangeFrameNotification)
+        print("Observers were removed")
     }
 
     private func view() -> MissionContentView {
@@ -127,6 +130,7 @@ extension MissionViewController: MissionViewToVCDelegate {
     func passData(viewModel: Mission.InitForm.ViewModel) {
         if changedData?.missionDescription != viewModel.missionDescription {
             changedData = viewModel
+            print("Data was changed!")
         }
     }
 }
