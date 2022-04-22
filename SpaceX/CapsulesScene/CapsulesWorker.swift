@@ -19,8 +19,6 @@ final class CapsulesWorker: CapsulesWorkerLogic {
                 return
             }
 
-            //			print(data)
-
             let jsonDecoder = JSONDecoder()
 
             do {
