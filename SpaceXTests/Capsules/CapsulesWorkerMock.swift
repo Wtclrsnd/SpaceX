@@ -9,9 +9,9 @@ import Foundation
 @testable import SpaceX
 
 class CapsulesWorkerMock: CapsulesWorkerLogic {
-    var requestCount: Int = 0
+    var getDataIsCalled: Bool = false
 
     func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void) {
-        requestCount += 1
+        getDataIsCalled = true
     }
 }

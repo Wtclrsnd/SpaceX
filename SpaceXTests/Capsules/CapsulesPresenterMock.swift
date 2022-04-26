@@ -9,9 +9,9 @@ import Foundation
 @testable import SpaceX
 
 class CapsulesPresenterMock: CapsulesPresentationLogic {
-    var presentationCount: Int = 0
+    var presentInitFormIsCalled: Bool = false // bool
 
     func presentInitForm(_ response: [Capsules.InitForm.Response]) {
-        presentationCount += 1
+        presentInitFormIsCalled = true
     }
 }

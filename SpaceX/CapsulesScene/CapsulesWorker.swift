@@ -16,7 +16,7 @@ final class CapsulesWorker: CapsulesWorkerLogic {
                 return
             }
             guard let data = data else {
-                return
+                return // return cutom error
             }
 
             let jsonDecoder = JSONDecoder()
