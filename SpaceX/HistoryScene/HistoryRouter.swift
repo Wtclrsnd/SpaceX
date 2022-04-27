@@ -21,11 +21,3 @@ final class HistoryRouter: HistoryRoutingLogic, HistoryDataPassing {
         viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
-
-private extension HistoryRouter {
-    //    func passDataTo_() {
-    //        source: HistoryDataStore,
-    //        destination: inout SomewhereDataStore
-    //    ) {
-    //    }
-}

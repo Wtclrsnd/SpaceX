@@ -9,29 +9,9 @@
 import UIKit
 
 final class HistoryWorker: HistoryWorkerLogic {
-    func getEvents(request: URLRequest, completion: @escaping ([EventData]) -> Void) {
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard error == nil else {
-                print(String(describing: error?.localizedDescription))
-                return
-            }
-            guard let data = data else {
-                return
-            }
-
-            let jsonDecoder = JSONDecoder()
-
-            do {
-                let responseObject = try jsonDecoder.decode(
-                    [EventData].self,
-                    from: data
-                )
-                print(responseObject)
-                completion(responseObject)
-            } catch let error {
-                print(String(describing: error.localizedDescription))
-            }
+    func getEvents(request: URLRequest, completion: @escaping ([History.EventData]) -> Void) {
+        URLHelper.shared.fetch(request: request, model: [History.EventData].self) {
+            completion($0)
         }
-        .resume()
     }
 }

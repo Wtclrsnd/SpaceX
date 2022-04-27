@@ -19,7 +19,7 @@ protocol HistoryBusinessLogic {
 }
 
 protocol HistoryWorkerLogic {
-    func getEvents(request: URLRequest, completion: @escaping ([EventData]) -> Void)
+    func getEvents(request: URLRequest, completion: @escaping ([History.EventData]) -> Void)
 }
 
 protocol HistoryPresentationLogic {

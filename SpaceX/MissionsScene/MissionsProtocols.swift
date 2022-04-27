@@ -19,7 +19,7 @@ protocol MissionsBusinessLogic {
 }
 
 protocol MissionsWorkerLogic {
-    func getMissions(request: URLRequest, completion: @escaping ([MissionData]) -> Void)
+    func getMissions(request: URLRequest, completion: @escaping ([Missions.MissionData]) -> Void)
 }
 
 protocol MissionsPresentationLogic {

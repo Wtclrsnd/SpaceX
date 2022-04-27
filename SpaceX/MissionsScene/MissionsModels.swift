@@ -20,22 +20,22 @@ enum Missions {
             let missionDescription: String
         }
     }
-}
 
-struct MissionData: Codable {
-    let missionName, missionID: String
-    let manufacturers, payloadIDS: [String]
-    let wikipedia: String
-    let website: String
-    let twitter: String?
-    let missionDescription: String
+    struct MissionData: Codable {
+        let missionName, missionID: String
+        let manufacturers, payloadIDS: [String]
+        let wikipedia: String
+        let website: String
+        let twitter: String?
+        let missionDescription: String
 
-    enum CodingKeys: String, CodingKey {
-        case missionName = "mission_name"
-        case missionID = "mission_id"
-        case manufacturers
-        case payloadIDS = "payload_ids"
-        case wikipedia, website, twitter
-        case missionDescription = "description"
+        enum CodingKeys: String, CodingKey {
+            case missionName = "mission_name"
+            case missionID = "mission_id"
+            case manufacturers
+            case payloadIDS = "payload_ids"
+            case wikipedia, website, twitter
+            case missionDescription = "description"
+        }
     }
 }

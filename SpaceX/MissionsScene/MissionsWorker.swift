@@ -9,28 +9,9 @@
 import UIKit
 
 final class MissionsWorker: MissionsWorkerLogic {
-    func getMissions(request: URLRequest, completion: @escaping ([MissionData]) -> Void) {
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard error == nil else {
-                print(String(describing: error?.localizedDescription))
-                return
-            }
-            guard let data = data else {
-                return
-            }
-
-            let jsonDecoder = JSONDecoder()
-            do {
-                let responseObject = try jsonDecoder.decode(
-                    [MissionData].self,
-                    from: data
-                )
-                //				print(responseObject)
-                completion(responseObject)
-            } catch let error {
-                print(String(describing: error.localizedDescription))
-            }
+    func getMissions(request: URLRequest, completion: @escaping ([Missions.MissionData]) -> Void) {
+        URLHelper.shared.fetch(request: request, model: [Missions.MissionData].self) {
+            completion($0)
         }
-        .resume()
     }
 }

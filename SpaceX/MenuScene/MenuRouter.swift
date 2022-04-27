@@ -31,6 +31,3 @@ final class MenuRouter: MenuRoutingLogic, MenuDataPassing {
         viewController?.navigationController?.pushViewController(capsulesVC, animated: true)
     }
 }
-
-private extension MenuRouter {
-}

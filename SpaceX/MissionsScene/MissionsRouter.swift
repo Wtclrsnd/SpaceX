@@ -21,11 +21,3 @@ final class MissionsRouter: MissionsRoutingLogic, MissionsDataPassing {
         viewController?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
-
-private extension MissionsRouter {
-    //    func passDataTo_() {
-    //        source: MissionsDataStore,
-    //        destination: inout SomewhereDataStore
-    //    ) {
-    //    }
-}

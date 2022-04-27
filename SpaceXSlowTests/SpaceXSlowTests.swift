@@ -37,7 +37,25 @@ class SpaceXSlowTests: XCTestCase {
 
         // then
         waitForExpectations(timeout: 3, handler: nil)
-        XCTAssertFalse(array.isEmpty, "array is not empty")
+        XCTAssertFalse(array.isEmpty, "array is empty")
+    }
+
+    func testWorkerGetsBadJSONFail() throws {
+        let url = loadStub(name: "FakeBadJson", withExtension: "json")
+        guard let url = url else { return }
+        let request = URLRequest(url: url)
+        let workerCompletionTriggers = expectation(description: "data")
+        var array: [Capsules.CapsuleData] = []
+
+        // when
+        sut.getData(request: request, completion: {
+            array = $0
+            workerCompletionTriggers.fulfill()
+        })
+
+        // then
+        waitForExpectations(timeout: 3, handler: nil)
+        XCTAssertFalse(array.isEmpty, "array is empty")
     }
 }
 

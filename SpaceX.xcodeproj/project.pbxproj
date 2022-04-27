@@ -14,6 +14,7 @@
 		72450F16281287F10084D111 /* CapsulesRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72450F15281287F10084D111 /* CapsulesRouterMock.swift */; };
 		724540D1281178A50043D51C /* SpaceXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724540D0281178A50043D51C /* SpaceXTests.swift */; };
 		724540D8281178C90043D51C /* CapsulesWorkerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724540D7281178C90043D51C /* CapsulesWorkerMock.swift */; };
+		726C41142818041800BBE2EE /* FakeBadJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 726C41132818041800BBE2EE /* FakeBadJson.json */; };
 		7277731E28080C9E0057B37E /* CapsulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7277731D28080C9E0057B37E /* CapsulesTableViewCell.swift */; };
 		7282997A27FDBFD600223FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282997927FDBFD600223FDA /* AppDelegate.swift */; };
 		7282997C27FDBFD600223FDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7282997B27FDBFD600223FDA /* SceneDelegate.swift */; };
@@ -73,6 +74,7 @@
 		72829A0427FDCDE500223FDA /* EventAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FC27FDCDE500223FDA /* EventAssembly.swift */; };
 		72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FD27FDCDE500223FDA /* EventInteractor.swift */; };
 		72A835D12816A9A30063A724 /* FakeCorrectJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 72A835D02816A9A30063A724 /* FakeCorrectJson.json */; };
+		72A8892F28192C600094CFC7 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8892E28192C600094CFC7 /* URLHelper.swift */; };
 		72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812952806FD5300276803 /* CapsulesContentView.swift */; };
 		72C812982807113100276803 /* CapsuleDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812972807113100276803 /* CapsuleDetailContentView.swift */; };
 		72D26A8C2812BCEA0053B5F1 /* SpaceXSlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D26A8B2812BCEA0053B5F1 /* SpaceXSlowTests.swift */; };
@@ -108,6 +110,7 @@
 		724540CE281178A50043D51C /* SpaceXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		724540D0281178A50043D51C /* SpaceXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXTests.swift; sourceTree = "<group>"; };
 		724540D7281178C90043D51C /* CapsulesWorkerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesWorkerMock.swift; sourceTree = "<group>"; };
+		726C41132818041800BBE2EE /* FakeBadJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeBadJson.json; sourceTree = "<group>"; };
 		7277731D28080C9E0057B37E /* CapsulesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesTableViewCell.swift; sourceTree = "<group>"; };
 		7282997627FDBFD600223FDA /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7282997927FDBFD600223FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		728299FC27FDCDE500223FDA /* EventAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssembly.swift; sourceTree = "<group>"; };
 		728299FD27FDCDE500223FDA /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 		72A835D02816A9A30063A724 /* FakeCorrectJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeCorrectJson.json; sourceTree = "<group>"; };
+		72A8892E28192C600094CFC7 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		72C812952806FD5300276803 /* CapsulesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesContentView.swift; sourceTree = "<group>"; };
 		72C812972807113100276803 /* CapsuleDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapsuleDetailContentView.swift; path = SpaceX/CapsulesScene/CapsuleDetailContentView.swift; sourceTree = SOURCE_ROOT; };
 		72D26A892812BCE90053B5F1 /* SpaceXSlowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXSlowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -249,6 +253,7 @@
 		7282997827FDBFD600223FDA /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				72A8892D28192C3F0094CFC7 /* Helper */,
 				7282998E27FDC62500223FDA /* MenuScene */,
 				7282999127FDCA6200223FDA /* HistoryScene */,
 				7282999027FDC63C00223FDA /* MissionsScene */,
@@ -382,11 +387,20 @@
 			path = EventScene;
 			sourceTree = "<group>";
 		};
+		72A8892D28192C3F0094CFC7 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				72A8892E28192C600094CFC7 /* URLHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		72D26A8A2812BCEA0053B5F1 /* SpaceXSlowTests */ = {
 			isa = PBXGroup;
 			children = (
 				72D26A8B2812BCEA0053B5F1 /* SpaceXSlowTests.swift */,
 				72A835D02816A9A30063A724 /* FakeCorrectJson.json */,
+				726C41132818041800BBE2EE /* FakeBadJson.json */,
 			);
 			path = SpaceXSlowTests;
 			sourceTree = "<group>";
@@ -514,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72A835D12816A9A30063A724 /* FakeCorrectJson.json in Resources */,
+				726C41142818041800BBE2EE /* FakeBadJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +582,7 @@
 				7282999F27FDCA7D00223FDA /* HistoryProtocols.swift in Sources */,
 				7282999D27FDCA7D00223FDA /* HistoryModels.swift in Sources */,
 				728299AC27FDCB0300223FDA /* MissionsWorker.swift in Sources */,
+				72A8892F28192C600094CFC7 /* URLHelper.swift in Sources */,
 				728299CF27FDCB5E00223FDA /* MenuViewController.swift in Sources */,
 				728299E327FDCD5A00223FDA /* MissionInteractor.swift in Sources */,
 				728299D027FDCB5E00223FDA /* MenuProtocols.swift in Sources */,
