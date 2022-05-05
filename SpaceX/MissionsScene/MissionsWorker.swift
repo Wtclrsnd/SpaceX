@@ -10,8 +10,14 @@ import UIKit
 
 final class MissionsWorker: MissionsWorkerLogic {
     func getMissions(request: URLRequest, completion: @escaping ([Missions.MissionData]) -> Void) {
-        URLHelper.shared.fetch(request: request, model: [Missions.MissionData].self) {
-            completion($0)
+        do {
+            try URLHelper.shared.fetch(request: request, model: [Missions.MissionData].self) {
+                completion($0)
+            }
+        } catch HelperError.incorrectJson {
+            print(HelperError.incorrectJson.localizedDescription)
+        } catch {
+            print("Other error")
         }
     }
 }

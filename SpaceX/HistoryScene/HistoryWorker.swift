@@ -10,8 +10,14 @@ import UIKit
 
 final class HistoryWorker: HistoryWorkerLogic {
     func getEvents(request: URLRequest, completion: @escaping ([History.EventData]) -> Void) {
-        URLHelper.shared.fetch(request: request, model: [History.EventData].self) {
-            completion($0)
+        do {
+            try URLHelper.shared.fetch(request: request, model: [History.EventData].self) {
+                completion($0)
+            }
+        } catch HelperError.incorrectJson {
+            print(HelperError.incorrectJson.localizedDescription)
+        } catch {
+            print("Other Error")
         }
     }
 }

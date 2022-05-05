@@ -73,6 +73,8 @@
 		72829A0327FDCDE500223FDA /* EventProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FB27FDCDE500223FDA /* EventProtocols.swift */; };
 		72829A0427FDCDE500223FDA /* EventAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FC27FDCDE500223FDA /* EventAssembly.swift */; };
 		72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FD27FDCDE500223FDA /* EventInteractor.swift */; };
+		728486AF282280E900ADE765 /* HelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728486AE282280E900ADE765 /* HelperError.swift */; };
+		728486B12822A75A00ADE765 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728486B02822A75A00ADE765 /* URLSessionExtension.swift */; };
 		72A835D12816A9A30063A724 /* FakeCorrectJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 72A835D02816A9A30063A724 /* FakeCorrectJson.json */; };
 		72A8892F28192C600094CFC7 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8892E28192C600094CFC7 /* URLHelper.swift */; };
 		72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812952806FD5300276803 /* CapsulesContentView.swift */; };
@@ -171,6 +173,8 @@
 		728299FB27FDCDE500223FDA /* EventProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventProtocols.swift; sourceTree = "<group>"; };
 		728299FC27FDCDE500223FDA /* EventAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAssembly.swift; sourceTree = "<group>"; };
 		728299FD27FDCDE500223FDA /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
+		728486AE282280E900ADE765 /* HelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperError.swift; sourceTree = "<group>"; };
+		728486B02822A75A00ADE765 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
 		72A835D02816A9A30063A724 /* FakeCorrectJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeCorrectJson.json; sourceTree = "<group>"; };
 		72A8892E28192C600094CFC7 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		72C812952806FD5300276803 /* CapsulesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesContentView.swift; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		7282997827FDBFD600223FDA /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				728486AD282280D300ADE765 /* Error */,
 				72A8892D28192C3F0094CFC7 /* Helper */,
 				7282998E27FDC62500223FDA /* MenuScene */,
 				7282999127FDCA6200223FDA /* HistoryScene */,
@@ -385,6 +390,15 @@
 				728299FD27FDCDE500223FDA /* EventInteractor.swift */,
 			);
 			path = EventScene;
+			sourceTree = "<group>";
+		};
+		728486AD282280D300ADE765 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				728486AE282280E900ADE765 /* HelperError.swift */,
+				728486B02822A75A00ADE765 /* URLSessionExtension.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		72A8892D28192C3F0094CFC7 /* Helper */ = {
@@ -581,6 +595,7 @@
 				728299B127FDCB0300223FDA /* MissionsAssembly.swift in Sources */,
 				7282999F27FDCA7D00223FDA /* HistoryProtocols.swift in Sources */,
 				7282999D27FDCA7D00223FDA /* HistoryModels.swift in Sources */,
+				728486B12822A75A00ADE765 /* URLSessionExtension.swift in Sources */,
 				728299AC27FDCB0300223FDA /* MissionsWorker.swift in Sources */,
 				72A8892F28192C600094CFC7 /* URLHelper.swift in Sources */,
 				728299CF27FDCB5E00223FDA /* MenuViewController.swift in Sources */,
@@ -596,6 +611,7 @@
 				728299CC27FDCB5E00223FDA /* MenuWorker.swift in Sources */,
 				728299BD27FDCB2E00223FDA /* CapsulesRouter.swift in Sources */,
 				728299C027FDCB2E00223FDA /* CapsulesProtocols.swift in Sources */,
+				728486AF282280E900ADE765 /* HelperError.swift in Sources */,
 				72DCE1302808860A00C9AA86 /* EventContentView.swift in Sources */,
 				7282997C27FDBFD600223FDA /* SceneDelegate.swift in Sources */,
 				728299F127FDCD9500223FDA /* CapsuleViewController.swift in Sources */,

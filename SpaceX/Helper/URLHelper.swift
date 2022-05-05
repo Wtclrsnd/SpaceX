@@ -12,25 +12,43 @@ final class URLHelper {
     static var shared = URLHelper()
 
     func fetch<T: Codable>(request: URLRequest, model: T.Type, completion: @escaping (T) -> Void) {
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            guard error == nil else {
-                print(String(describing: error?.localizedDescription))
-                return
-            }
-            guard let data = data else {
-                return // return cutom error
-            }
-            let jsonDecoder = JSONDecoder()
-
+        URLSession.shared.helperDataTask(with: request) { result in
             do {
-                let responseObject = try jsonDecoder.decode(
-                    model,
-                    from: data
-                )
-                completion(responseObject)
-            } catch let error {
-                print(String(describing: error.localizedDescription))
+                switch result {
+                case .success(let data):
+                    let jsonDecoder = JSONDecoder()
+                    let responseObject = try jsonDecoder.decode(
+                        model,
+                        from: data
+                    )
+                    completion(responseObject)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            } catch {
+                print(error.localizedDescription)
             }
-        }.resume()
+        }
     }
+//        URLSession.shared.dataTask(with: request) { data, _, error in
+//            guard error == nil else {
+//                print(String(describing: error?.localizedDescription))
+//                return
+//            }
+//            guard let data = data else {
+//                return // return cutom error
+//            }
+//            let jsonDecoder = JSONDecoder()
+//
+//            do {
+//                let responseObject = try jsonDecoder.decode(
+//                    model,
+//                    from: data
+//                )
+//                completion(responseObject)
+//            } catch let error {
+//                print(String(describing: error.localizedDescription))
+//            }
+//        }.resume()
+//    }
 }

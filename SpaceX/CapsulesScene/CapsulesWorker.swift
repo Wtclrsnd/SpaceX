@@ -10,8 +10,14 @@ import Foundation
 
 final class CapsulesWorker: CapsulesWorkerLogic {
     func getData(request: URLRequest, completion: @escaping ([Capsules.CapsuleData]) -> Void) {
-        URLHelper.shared.fetch(request: request, model: [Capsules.CapsuleData].self) {
-            completion($0)
+        do {
+            try URLHelper.shared.fetch(request: request, model: [Capsules.CapsuleData].self) {
+                completion($0)
+            }
+        } catch HelperError.incorrectJson {
+            print(HelperError.incorrectJson.localizedDescription)
+        } catch {
+            print("Other error")
         }
     }
 }
