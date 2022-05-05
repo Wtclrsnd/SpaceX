@@ -11,7 +11,7 @@ import UIKit
 final class URLHelper {
     static var shared = URLHelper()
 
-    func fetch<T: Codable>(request: URLRequest, model: T.Type, completion: @escaping (T) -> Void) {
+    func fetch<T: Codable>(request: URLRequest, model: T.Type, completion: @escaping (Result<T, HelperError>) -> Void) {
         URLSession.shared.helperDataTask(with: request) { result in
             do {
                 switch result {
@@ -21,11 +21,13 @@ final class URLHelper {
                         model,
                         from: data
                     )
-                    completion(responseObject)
+                    completion(.success(responseObject))
                 case .failure(let error):
+                    completion(.failure(.incorrectJson))
                     print(error.localizedDescription)
                 }
             } catch {
+                completion(.failure(.notFound))
                 print(error.localizedDescription)
             }
         }
