@@ -1,22 +1,22 @@
 //
-//  HelperError.swift
+//  DataTaskError.swift
 //  SpaceX
 //
-//  Created by Emil Shpeklord on 04.05.2022.
+//  Created by Emil Shpeklord on 06.05.2022.
 //
 
 import Foundation
 
-enum HelperError: Error {
-    case decodingError
+enum DataTaskError: Error {
+    case incorrectJson
     case notFound
     case unexpected(code: Int)
 }
 
-extension HelperError: CustomStringConvertible {
+extension DataTaskError: CustomStringConvertible {
     public var description: String {
         switch self {
-        case .decodingError:
+        case .incorrectJson:
             return "JSON is damaged."
         case .notFound:
             return "No connection to server."

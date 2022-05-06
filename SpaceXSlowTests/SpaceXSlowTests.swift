@@ -30,10 +30,12 @@ class SpaceXSlowTests: XCTestCase {
         var array: [Capsules.CapsuleData] = []
 
         // when
-        sut.getData(request: request, completion: {
-            array = $0
-            workerCompletionTriggers.fulfill()
-        })
+        measure {
+            sut.getData(request: request, completion: {
+                array = $0
+                workerCompletionTriggers.fulfill()
+            })
+        }
 
         // then
         waitForExpectations(timeout: 3, handler: nil)
@@ -48,10 +50,12 @@ class SpaceXSlowTests: XCTestCase {
         var array: [Capsules.CapsuleData] = []
 
         // when
-        sut.getData(request: request, completion: {
-            array = $0
-            workerCompletionTriggers.fulfill()
-        })
+        measure {
+            sut.getData(request: request, completion: {
+                array = $0
+                workerCompletionTriggers.fulfill()
+            })
+        }
 
         // then
         waitForExpectations(timeout: 3, handler: nil)

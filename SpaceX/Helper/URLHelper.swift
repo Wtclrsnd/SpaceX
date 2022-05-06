@@ -23,7 +23,7 @@ final class URLHelper {
                     )
                     completion(.success(responseObject))
                 case .failure(let error):
-                    completion(.failure(.incorrectJson))
+                    completion(.failure(.decodingError))
                     print(error.localizedDescription)
                 }
             } catch {

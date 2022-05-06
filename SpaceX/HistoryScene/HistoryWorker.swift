@@ -10,14 +10,12 @@ import UIKit
 
 final class HistoryWorker: HistoryWorkerLogic {
     func getEvents(request: URLRequest, completion: @escaping ([History.EventData]) -> Void) {
-        do {
-            URLHelper.shared.fetch(request: request, model: [History.EventData].self) { result in
-                switch result {
-                case .success(let events):
-                    completion(events)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
+        URLHelper.shared.fetch(request: request, model: [History.EventData].self) { result in
+            switch result {
+            case .success(let events):
+                completion(events)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

@@ -75,6 +75,7 @@
 		72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728299FD27FDCDE500223FDA /* EventInteractor.swift */; };
 		728486AF282280E900ADE765 /* HelperError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728486AE282280E900ADE765 /* HelperError.swift */; };
 		728486B12822A75A00ADE765 /* URLSessionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728486B02822A75A00ADE765 /* URLSessionExtension.swift */; };
+		728486B32824FABB00ADE765 /* DataTaskError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728486B22824FABB00ADE765 /* DataTaskError.swift */; };
 		72A835D12816A9A30063A724 /* FakeCorrectJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 72A835D02816A9A30063A724 /* FakeCorrectJson.json */; };
 		72A8892F28192C600094CFC7 /* URLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8892E28192C600094CFC7 /* URLHelper.swift */; };
 		72C812962806FD5300276803 /* CapsulesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C812952806FD5300276803 /* CapsulesContentView.swift */; };
@@ -175,6 +176,7 @@
 		728299FD27FDCDE500223FDA /* EventInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInteractor.swift; sourceTree = "<group>"; };
 		728486AE282280E900ADE765 /* HelperError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperError.swift; sourceTree = "<group>"; };
 		728486B02822A75A00ADE765 /* URLSessionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionExtension.swift; sourceTree = "<group>"; };
+		728486B22824FABB00ADE765 /* DataTaskError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTaskError.swift; sourceTree = "<group>"; };
 		72A835D02816A9A30063A724 /* FakeCorrectJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeCorrectJson.json; sourceTree = "<group>"; };
 		72A8892E28192C600094CFC7 /* URLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHelper.swift; sourceTree = "<group>"; };
 		72C812952806FD5300276803 /* CapsulesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsulesContentView.swift; sourceTree = "<group>"; };
@@ -396,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				728486AE282280E900ADE765 /* HelperError.swift */,
-				728486B02822A75A00ADE765 /* URLSessionExtension.swift */,
+				728486B22824FABB00ADE765 /* DataTaskError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -404,6 +406,7 @@
 		72A8892D28192C3F0094CFC7 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				728486B02822A75A00ADE765 /* URLSessionExtension.swift */,
 				72A8892E28192C600094CFC7 /* URLHelper.swift */,
 			);
 			path = Helper;
@@ -646,6 +649,7 @@
 				728299D127FDCB5E00223FDA /* MenuAssembly.swift in Sources */,
 				728299E027FDCD5A00223FDA /* MissionViewController.swift in Sources */,
 				7282999C27FDCA7D00223FDA /* HistoryRouter.swift in Sources */,
+				728486B32824FABB00ADE765 /* DataTaskError.swift in Sources */,
 				728299AB27FDCB0300223FDA /* MissionsPresenter.swift in Sources */,
 				72829A0027FDCDE500223FDA /* EventRouter.swift in Sources */,
 				72829A0527FDCDE500223FDA /* EventInteractor.swift in Sources */,

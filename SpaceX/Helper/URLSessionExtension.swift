@@ -10,7 +10,7 @@ import Foundation
 extension URLSession {
     func helperDataTask(
         with request: URLRequest,
-        handler: @escaping (Result<Data, HelperError>) -> Void
+        handler: @escaping (Result<Data, DataTaskError>) -> Void
     ) {
         dataTask(with: request) { data, _, error in
             if error != nil {
