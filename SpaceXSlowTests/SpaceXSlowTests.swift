@@ -26,19 +26,21 @@ class SpaceXSlowTests: XCTestCase {
         let url = loadStub(name: "FakeCorrectJson", withExtension: "json")
         guard let url = url else { return }
         let request = URLRequest(url: url)
-        let workerCompletionTriggers = expectation(description: "data")
         var array: [Capsules.CapsuleData] = []
 
         // when
-        measure {
+        measure(
+            metrics: [
+                XCTClockMetric(),
+                XCTCPUMetric()
+            ]
+        ) {
             sut.getData(request: request, completion: {
                 array = $0
-                workerCompletionTriggers.fulfill()
             })
         }
 
         // then
-        waitForExpectations(timeout: 3, handler: nil)
         XCTAssertFalse(array.isEmpty, "array is empty")
     }
 
