@@ -63,6 +63,8 @@ class SpaceXSlowTests: XCTestCase {
         waitForExpectations(timeout: 3, handler: nil)
         XCTAssertFalse(array.isEmpty, "array is empty")
     }
+
+    // test with string append vs +
 }
 
 extension XCTestCase {

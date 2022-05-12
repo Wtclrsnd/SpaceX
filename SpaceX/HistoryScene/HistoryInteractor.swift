@@ -9,10 +9,10 @@
 import UIKit
 
 final class HistoryInteractor: HistoryBusinessLogic, HistoryDataStore {
-    private var events: [History.InitForm.Response] = []
-
     private let presenter: HistoryPresentationLogic
     private let worker: HistoryWorkerLogic
+
+    var events: [History.InitForm.Response] = []
 
     init(
         presenter: HistoryPresentationLogic,
