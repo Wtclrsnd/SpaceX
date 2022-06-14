@@ -9,6 +9,8 @@
 import UIKit
 
 final class MissionViewController: UIViewController, MissionDisplayLogic {
+    var changedData: Mission.InitForm.ViewModel?
+
     private let interactor: MissionBusinessLogic
 
     init(interactor: MissionBusinessLogic) {
@@ -21,9 +23,74 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func view() -> MissionContentView {
+    deinit {
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillHideNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillShowNotification)
+        NotificationCenter.default.removeObserver(UIResponder.keyboardWillChangeFrameNotification)
+        print("Observers were removed")
+    }
+
+    private func view() -> MissionContentView {
         guard let view = self.view as? MissionContentView else { return MissionContentView() }
         return view
+    }
+
+    private func addObservers() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(adjustForKeyboard),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(adjustForKeyboard),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil
+        )
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(addButton),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+    }
+
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewAndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            view().descriptionTextView.contentInset = .zero
+            navigationItem.rightBarButtonItem = nil
+        } else {
+            view().descriptionTextView.contentInset = UIEdgeInsets(
+                top: 0,
+                left: 0,
+                bottom: keyboardViewAndFrame.height - view().safeAreaInsets.bottom,
+                right: 0
+            )
+        }
+
+        view().descriptionTextView.scrollIndicatorInsets = view().descriptionTextView.contentInset
+        let selectedRange = view().descriptionTextView.selectedRange
+        view().descriptionTextView.scrollRangeToVisible(selectedRange)
+    }
+
+    @objc func addButton(notification: Notification) {
+        let rightItem = UIBarButtonItem(
+            barButtonSystemItem: UIBarButtonItem.SystemItem.done,
+            target: self,
+            action: #selector(done)
+        )
+        self.navigationItem.rightBarButtonItem = rightItem
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.tintColor = .systemPink
     }
 
     override func loadView() {
@@ -33,12 +100,14 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+        addObservers()
     }
 
     // MARK: - MissionDisplayLogic
 
     func displayInitForm(_ viewModel: Mission.InitForm.ViewModel) {
         title = viewModel.missionName
+        changedData = viewModel
         view().mission = viewModel
     }
 
@@ -46,5 +115,22 @@ final class MissionViewController: UIViewController, MissionDisplayLogic {
 
     private func initForm() {
         interactor.requestInitForm(Mission.InitForm.Request())
+    }
+
+    @objc private func done() {
+        view().endEditing(true)
+        view().mission?.missionDescription = view().descriptionTextView.text
+        view().delegate = self
+        guard let mission = view().mission else { return }
+        view().delegate?.passData(viewModel: mission)
+    }
+}
+
+extension MissionViewController: MissionViewToVCDelegate {
+    func passData(viewModel: Mission.InitForm.ViewModel) {
+        if changedData?.missionDescription != viewModel.missionDescription {
+            changedData = viewModel
+            print("Data was changed!")
+        }
     }
 }

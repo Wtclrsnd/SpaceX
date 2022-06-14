@@ -20,21 +20,21 @@ enum History {
             let details: String
         }
     }
-}
 
-struct EventData: Codable {
-    let id: Int
-    let title, eventDateUTC: String
-    let eventDateUnix: Int
-    let flightNumber: Int?
-    let details: String
+    struct EventData: Codable {
+        let id: Int
+        let title, eventDateUTC: String
+        let eventDateUnix: Int
+        let flightNumber: Int?
+        let details: String
 
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case title = "title"
-        case eventDateUTC = "event_date_utc"
-        case eventDateUnix = "event_date_unix"
-        case flightNumber = "flight_number"
-        case details = "details"
+        enum CodingKeys: String, CodingKey {
+            case id = "id"
+            case title = "title"
+            case eventDateUTC = "event_date_utc"
+            case eventDateUnix = "event_date_unix"
+            case flightNumber = "flight_number"
+            case details = "details"
+        }
     }
 }

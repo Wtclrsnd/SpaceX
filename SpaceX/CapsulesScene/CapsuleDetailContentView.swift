@@ -76,9 +76,9 @@ final class CapsuleDetailContentView: UIView {
     private lazy var timeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.heightAnchor.constraint(equalToConstant: 60).isActive = true
         label.numberOfLines = 0
         label.text = "time: "
+        label.textAlignment = .center
         label.font = .systemFont(ofSize: 28)
         return label
     }()

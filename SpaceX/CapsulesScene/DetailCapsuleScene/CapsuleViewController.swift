@@ -25,7 +25,7 @@ final class CapsuleViewController: UIViewController, CapsuleDisplayLogic {
         self.view = CapsuleDetailContentView()
     }
 
-    func view() -> CapsuleDetailContentView {
+    private func view() -> CapsuleDetailContentView {
         guard let view = self.view as? CapsuleDetailContentView else { return CapsuleDetailContentView() }
         return view
     }

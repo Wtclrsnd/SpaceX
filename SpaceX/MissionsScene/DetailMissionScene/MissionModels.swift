@@ -12,12 +12,12 @@ enum Mission {
         struct Response {
             let missionName: String
             let missionID: String
-            let missionDescription: String
+            var missionDescription: String
         }
         struct ViewModel {
             let missionName: String
             let missionID: String
-            let missionDescription: String
+            var missionDescription: String
         }
     }
 }

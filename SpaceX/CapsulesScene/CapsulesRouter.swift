@@ -21,11 +21,3 @@ final class CapsulesRouter: CapsulesRoutingLogic, CapsulesDataPassing {
         self.dataStore = dataStore
     }
 }
-
-private extension CapsulesRouter {
-    //    func passDataTo_() {
-    //        source: CapsulesDataStore,
-    //        destination: inout SomewhereDataStore
-    //    ) {
-    //    }
-}
